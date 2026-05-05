@@ -335,11 +335,11 @@ const Index = () => {
             </div>
             <div className="flex gap-4">
               {[
-                { icon: Instagram, href: "#" },
-                { icon: Facebook, href: "#" },
-                { icon: Music2, href: "#" },
+                { icon: Instagram, href: "#", label: "EMKA na Instagramie" },
+                { icon: Facebook, href: "#", label: "EMKA na Facebooku" },
+                { icon: Music2, href: "#", label: "EMKA na TikToku" },
               ].map((s, i) => (
-                <a key={i} href={s.href} className="w-11 h-11 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold hover:text-gold-foreground hover:border-gold transition-smooth" aria-label="Social">
+                <a key={i} href={s.href} className="w-11 h-11 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold hover:text-gold-foreground hover:border-gold transition-smooth" aria-label={s.label}>
                   <s.icon className="w-5 h-5" />
                 </a>
               ))}
