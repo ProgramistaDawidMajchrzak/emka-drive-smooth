@@ -22,13 +22,13 @@ const reasons = [
   { icon: Sparkles, title: "Luźna atmosfera", desc: "Bezstresowa nauka w komfortowych warunkach. Lubimy to, co robimy." },
   { icon: Target, title: "Indywidualne podejście", desc: "Tempo dopasowane do Ciebie. Każdy kursant traktowany jest wyjątkowo." },
   { icon: Award, title: "Wysoka zdawalność", desc: "Solidne przygotowanie, sprawdzone metody, realne efekty." },
-  { icon: Users, title: "Społeczność EMKA", desc: "Setki zadowolonych kierowców rocznie. Dołącz do grona zdających." },
+  { icon: Users, title: "Społeczność eMKA", desc: "Setki zadowolonych kierowców rocznie. Dołącz do grona zdających." },
 ];
 
 const courses = [
-  { name: "Kurs prawa jazdy kat. B", price: "od 3 200 zł", features: ["30h teorii", "30h jazd praktycznych", "Materiały online", "Egzamin wewnętrzny"], featured: true },
+  { name: "Kurs prawa jazdy kat. B", price: "od 3 200 zł", features: ["30h teorii", "30h jazd praktycznych", "Dostęp do platformy e-learningowej", "Materiały online", "Egzamin wewnętrzny"], featured: true },
   { name: "Jazdy doszkalające", price: "120 zł / h", features: ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy"] },
-  { name: "Kurs ekspresowy", price: "od 3 800 zł", features: ["Intensywny tryb", "Krótszy termin", "Indywidualny plan", "Priorytetowe godziny"] },
+  { name: "Kurs ekspresowy", price: "od 3 800 zł", features: ["Intensywny tryb", "Krótszy termin", "Dostęp do platformy e-learningowej", "Indywidualny plan", "Priorytetowe godziny"] },
 ];
 
 const reviews = [
@@ -56,13 +56,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      {/* PROMO BANNER */}
+      <div className="fixed top-0 inset-x-0 z-[60] bg-gold-gradient text-gold-foreground text-center py-2 px-4 text-sm font-semibold">
+        Promocja dla zapisanych do końca maja!{" "}
+        <a href="tel:601234567" className="underline font-bold ml-1">Zadzwoń i dowiedz się więcej →</a>
+      </div>
+
       {/* NAV */}
-      <header className={`fixed top-0 inset-x-0 z-50 transition-smooth ${scrolled ? "bg-primary-deep/95 backdrop-blur-lg shadow-elegant" : "bg-transparent"}`}>
+      <header className={`fixed top-9 inset-x-0 z-50 transition-smooth ${scrolled ? "bg-primary-deep/95 backdrop-blur-lg shadow-elegant" : "bg-transparent"}`}>
         <div className="container flex items-center justify-between py-4">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logo} alt="EMKA – Ośrodek Szkolenia Kierowców" className="h-12 w-12 object-contain" />
+            <img src={logo} alt="eMKA – Ośrodek Szkolenia Kierowców" className="h-12 w-12 object-contain" />
             <div className="hidden sm:block leading-tight">
-              <div className="font-display text-xl text-gold font-bold">EMKA</div>
+              <div className="font-display text-xl text-gold font-bold">eMKA</div>
               <div className="text-[10px] tracking-[0.2em] uppercase text-primary-foreground/70">Ośrodek Szkolenia Kierowców</div>
             </div>
           </a>
@@ -95,7 +101,7 @@ const Index = () => {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen flex items-center bg-hero overflow-hidden pt-20">
+      <section id="top" className="relative min-h-screen flex items-center bg-hero overflow-hidden pt-32">
         <div className="absolute inset-0 opacity-60" style={{ background: "var(--gradient-radial-glow)" }} />
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl animate-pulse-glow" />
         <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-primary-glow/20 blur-3xl" />
@@ -131,7 +137,7 @@ const Index = () => {
 
           <div className="relative animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
-            <img src={logo} alt="Logo EMKA" className="relative w-full max-w-lg mx-auto drop-shadow-2xl" />
+            <img src={logo} alt="Logo eMKA" className="relative w-full max-w-lg mx-auto drop-shadow-2xl" />
           </div>
         </div>
       </section>
@@ -140,7 +146,7 @@ const Index = () => {
       <section id="dlaczego" className="py-24 md:py-32 bg-background">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="text-sm tracking-[0.3em] uppercase text-gold font-semibold mb-4">Dlaczego EMKA</div>
+            <div className="text-sm tracking-[0.3em] uppercase text-gold font-semibold mb-4">Dlaczego eMKA</div>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">Wybierz spokój i skuteczność</h2>
             <p className="text-muted-foreground text-lg">Wszystko, czego potrzebujesz, by pewnie zdać i pewnie jeździć.</p>
           </div>
@@ -165,7 +171,7 @@ const Index = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-primary/5 blur-2xl rounded-3xl" />
             <div className="relative bg-hero rounded-3xl p-12 shadow-elegant flex items-center justify-center aspect-square">
-              <img src={logo} alt="EMKA Logo" className="w-full max-w-sm drop-shadow-2xl animate-pulse-glow rounded-full" />
+              <img src={logo} alt="eMKA Logo" className="w-full max-w-sm drop-shadow-2xl animate-pulse-glow rounded-full" />
             </div>
           </div>
           <div>
@@ -174,7 +180,7 @@ const Index = () => {
               Spokój. <span className="text-gradient-gold">Jakość.</span> Skuteczność.
             </h2>
             <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-              EMKA to szkoła jazdy w Poznaniu, która stawia na jakość, spokój i skuteczność. Uczymy nie tylko zdać egzamin, ale przede wszystkim dobrze i pewnie jeździć na co dzień.
+              eMKA to szkoła jazdy w Poznaniu, która stawia na jakość, spokój i skuteczność. Uczymy nie tylko zdać egzamin, ale przede wszystkim dobrze i pewnie jeździć na co dzień.
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed mb-8">
               Nasi instruktorzy to doświadczeni profesjonaliści z ludzkim podejściem.
@@ -243,7 +249,7 @@ const Index = () => {
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
-            <img src={cars} alt="Auta EMKA – wizualizacje brandingowe" className="relative rounded-3xl shadow-elegant w-full" loading="lazy" />
+            <img src={cars} alt="Auta eMKA – wizualizacje brandingowe" className="relative rounded-3xl shadow-elegant w-full" loading="lazy" />
           </div>
         </div>
       </section>
@@ -327,24 +333,24 @@ const Index = () => {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="EMKA" className="h-10 w-10 object-contain" />
+              <img src={logo} alt="eMKA" className="h-10 w-10 object-contain" />
               <div>
-                <div className="font-display text-lg text-gold font-bold">EMKA</div>
+                <div className="font-display text-lg text-gold font-bold">eMKA</div>
                 <div className="text-[10px] tracking-[0.2em] uppercase opacity-70">Ośrodek Szkolenia Kierowców</div>
               </div>
             </div>
             <div className="flex gap-4">
               {[
-                { icon: Instagram, href: "#", label: "EMKA na Instagramie" },
-                { icon: Facebook, href: "#", label: "EMKA na Facebooku" },
-                { icon: Music2, href: "#", label: "EMKA na TikToku" },
+                { icon: Instagram, href: "#", label: "eMKA na Instagramie" },
+                { icon: Facebook, href: "#", label: "eMKA na Facebooku" },
+                { icon: Music2, href: "#", label: "eMKA na TikToku" },
               ].map((s, i) => (
                 <a key={i} href={s.href} className="w-11 h-11 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold hover:text-gold-foreground hover:border-gold transition-smooth" aria-label={s.label}>
                   <s.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
-            <div className="text-sm opacity-70">© {new Date().getFullYear()} EMKA Poznań. Wszelkie prawa zastrzeżone.</div>
+            <div className="text-sm opacity-70">© {new Date().getFullYear()} eMKA Poznań. Wszelkie prawa zastrzeżone.</div>
           </div>
         </div>
       </footer>
