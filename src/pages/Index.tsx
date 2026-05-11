@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Car, Users, Heart, Target, Award, Phone, Mail, MapPin, Instagram, Facebook, Music2, Menu, X, Check, Star, Sparkles } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Car, Users, Heart, Target, Award, Phone, Mail, MapPin, Instagram, Facebook, Music2, Menu, X, Check, Star, Sparkles, Gift, GraduationCap, Zap } from "lucide-react";
 import logo from "@/assets/emka-logo.png";
 import cars from "@/assets/emka-cars.jpg";
 
 const nav = [
   { href: "#dlaczego", label: "Dlaczego my" },
   { href: "#o-nas", label: "O nas" },
+  { href: "#instruktorzy", label: "Instruktorzy" },
   { href: "#kursy", label: "Kursy" },
   { href: "#flota", label: "Flota" },
+  { href: "#promocje", label: "Promocje" },
   { href: "#opinie", label: "Opinie" },
   { href: "#faq", label: "FAQ" },
   { href: "#kontakt", label: "Kontakt" },
@@ -25,10 +28,68 @@ const reasons = [
   { icon: Users, title: "Społeczność eMKA", desc: "Setki zadowolonych kierowców rocznie. Dołącz do grona zdających." },
 ];
 
-const courses = [
-  { name: "Kurs prawa jazdy kat. B", price: "od 3 200 zł", features: ["30h teorii", "30h jazd praktycznych", "Dostęp do platformy e-learningowej", "Materiały online", "Egzamin wewnętrzny"], featured: true },
-  { name: "Jazdy doszkalające", price: "120 zł / h", features: ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy"] },
-  { name: "Kurs ekspresowy", price: "od 3 800 zł", features: ["Intensywny tryb", "Krótszy termin", "Dostęp do platformy e-learningowej", "Indywidualny plan", "Priorytetowe godziny"] },
+const instructors = [
+  { name: "Marcin", phone: "796 330 063", tel: "796330063", initial: "M" },
+  { name: "Krzysztof", phone: "790 775 037", tel: "790775037", initial: "K" },
+  { name: "Marianna", phone: "790 775 049", tel: "790775049", initial: "M" },
+];
+
+const mainCourses = [
+  {
+    name: "Kurs e-learningowy",
+    price: "4 000 zł",
+    icon: GraduationCap,
+    features: ["30h teorii online (e-learning)", "30h jazd praktycznych", "Platforma e-learningowa 24/7", "Materiały i testy online", "Egzamin wewnętrzny"],
+    featured: false,
+  },
+  {
+    name: "Kurs stacjonarny",
+    price: "4 500 zł",
+    icon: Users,
+    features: ["30h teorii w sali", "30h jazd praktycznych", "Dostęp do platformy e-learningowej", "Materiały i testy online", "Egzamin wewnętrzny"],
+    featured: true,
+  },
+  {
+    name: "Kurs ekspresowy",
+    price: "4 900 zł",
+    icon: Zap,
+    features: ["Intensywny tryb nauki", "Krótszy termin realizacji", "Dostęp do platformy e-learningowej", "Indywidualny plan jazd", "Priorytetowe godziny"],
+    featured: false,
+  },
+];
+
+const extraCourses = [
+  {
+    name: "Jazdy doszkalające",
+    price: "150 zł / h",
+    icon: Car,
+    features: ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy"],
+  },
+  {
+    name: "Kurs – skrzynia automatyczna",
+    price: "4 800 zł",
+    icon: Award,
+    features: ["Pełny kurs kat. B", "Auto z automatyczną skrzynią biegów", "Podstawiamy auto z automatem", "Dostęp do platformy e-learningowej", "Egzamin wewnętrzny"],
+  },
+];
+
+const promos = [
+  {
+    icon: Sparkles,
+    badge: "Do końca maja",
+    title: "Kurs ekspresowy w cenie normalnego",
+    desc: "Zapisz się do końca maja i jedź na kursie ekspresowym, płacąc tyle co za kurs stacjonarny. Zadzwoń i potwierdź termin – ilość miejsc ograniczona.",
+    cta: "Zadzwoń i skorzystaj",
+    href: "tel:790775049",
+  },
+  {
+    icon: Gift,
+    badge: "Cały rok",
+    title: "System poleceń – rabat dla Ciebie i kolegi",
+    desc: "Przyprowadź znajomego do eMKA – oboje dostaniecie rabat na kurs. Zadzwoń, żeby dowiedzieć się więcej o warunkach i wysokości rabatu.",
+    cta: "Dowiedz się więcej",
+    href: "tel:790775049",
+  },
 ];
 
 const reviews = [
@@ -38,15 +99,18 @@ const reviews = [
 ];
 
 const faqs = [
-  { q: "Ile trwa cały kurs prawa jazdy kat. B?", a: "Standardowo 6–10 tygodni, w zależności od dostępności kursanta. Mamy też tryb ekspresowy." },
+  { q: "Ile trwa cały kurs prawa jazdy kat. B?", a: "Standardowo 6–10 tygodni, w zależności od dostępności kursanta. Mamy też tryb ekspresowy – skróć czas do minimum." },
   { q: "Czy mogę jeździć tym samym autem na egzaminie?", a: "Tak! Nasza flota to auta identyczne z egzaminacyjnymi WORD Poznań – uczysz się tam, gdzie zdajesz." },
-  { q: "Jak wygląda płatność za kurs?", a: "Możliwość rozłożenia na wygodne raty 0%. Szczegóły ustalamy indywidualnie." },
-  { q: "Od jakiego wieku mogę zacząć kurs?", a: "Kurs możesz rozpocząć 3 miesiące przed 18. urodzinami." },
+  { q: "Jak wygląda płatność za kurs?", a: "Oferujemy raty 0% – pierwsza wpłata to 1 000 zł przy zapisie. Każda kolejna rata ustalana jest indywidualnie po ukończeniu każdych 10 godzin jazdy." },
+  { q: "Od jakiego wieku mogę zacząć kurs?", a: "Kurs możesz rozpocząć 3 miesiące przed 18. urodzinami. Osoby w wieku 16 lat i 9 miesięcy mogą zacząć naukę za zgodą rodzica lub opiekuna prawnego." },
+  { q: "Czy oferujecie kurs na skrzynię automatyczną?", a: "Tak! Posiadamy auto z automatyczną skrzynią biegów – podstawiamy je dla chętnych. Kurs na automat kosztuje 4 800 zł." },
 ];
 
 const Index = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [showTeenModal, setShowTeenModal] = useState(false);
+  const [showSOM, setShowSOM] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -54,12 +118,74 @@ const Index = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!sessionStorage.getItem("teenPopupShown")) {
+      const t = setTimeout(() => setShowTeenModal(true), 1500);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
+  const closeTeenModal = () => {
+    setShowTeenModal(false);
+    sessionStorage.setItem("teenPopupShown", "true");
+  };
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+
+      {/* POPUP 17-LATKI */}
+      <Dialog open={showTeenModal} onOpenChange={(v) => { if (!v) closeTeenModal(); }}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle className="font-display text-xl text-primary">Masz 16 lat i 9 miesięcy?</DialogTitle>
+            <DialogDescription className="text-foreground/80 leading-relaxed pt-2">
+              Nie musisz czekać do 18. urodzin! Możesz rozpocząć naukę jazdy już w wieku{" "}
+              <strong>16 lat i 9 miesięcy</strong> — wystarczy zgoda rodzica lub opiekuna prawnego.
+              <br /><br />
+              Zadzwoń do nas i umów się na start kursu jeszcze przed swoimi 18. urodzinami.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex gap-3 pt-2">
+            <Button className="bg-gold-gradient text-gold-foreground font-semibold" asChild>
+              <a href="tel:790775049">Zadzwoń teraz</a>
+            </Button>
+            <Button variant="outline" onClick={closeTeenModal}>Zamknij</Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* DIALOG STANDARDY OCHRONY MAŁOLETNICH */}
+      <Dialog open={showSOM} onOpenChange={setShowSOM}>
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="font-display text-xl text-primary">Standardy ochrony małoletnich</DialogTitle>
+          </DialogHeader>
+          <div className="text-foreground/80 leading-relaxed space-y-3 text-sm">
+            <p>
+              Ośrodek Szkolenia Kierowców <strong>eMKA</strong> w Poznaniu wdrożył Standardy Ochrony Małoletnich
+              zgodnie z ustawą z dnia 28 lipca 2023 r. o zmianie ustawy – Kodeks rodzinny i opiekuńczy
+              oraz niektórych innych ustaw (tzw. ustawa Kamilkowa).
+            </p>
+            <p>Nasze standardy obejmują m.in.:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Weryfikację pracowników i instruktorów pod kątem niekaralności</li>
+              <li>Procedury reagowania na sygnały krzywdzenia małoletnich</li>
+              <li>Zasady bezpiecznego kontaktu z kursantami nieletnimi</li>
+              <li>Wyznaczenie osoby odpowiedzialnej za ochronę małoletnich w ośrodku</li>
+            </ul>
+            <p>
+              Pełny dokument standardów dostępny jest w biurze ośrodka oraz na życzenie
+              przesyłany drogą mailową. W razie pytań: <strong>biuro@emka.edu.pl</strong>
+            </p>
+          </div>
+          <Button variant="outline" onClick={() => setShowSOM(false)} className="mt-2">Zamknij</Button>
+        </DialogContent>
+      </Dialog>
+
       {/* PROMO BANNER */}
       <div className="fixed top-0 inset-x-0 z-[60] bg-gold-gradient text-gold-foreground text-center py-2 px-4 text-sm font-semibold">
         Promocja dla zapisanych do końca maja!{" "}
-        <a href="tel:601234567" className="underline font-bold ml-1">Zadzwoń i dowiedz się więcej →</a>
+        <a href="tel:790775049" className="underline font-bold ml-1">Zadzwoń i dowiedz się więcej →</a>
       </div>
 
       {/* NAV */}
@@ -72,7 +198,7 @@ const Index = () => {
               <div className="text-[10px] tracking-[0.2em] uppercase text-primary-foreground/70">Ośrodek Szkolenia Kierowców</div>
             </div>
           </a>
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5">
             {nav.map((n) => (
               <a key={n.href} href={n.href} className="text-sm text-primary-foreground/80 hover:text-gold transition-smooth relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all">
                 {n.label}
@@ -192,24 +318,54 @@ const Index = () => {
         </div>
       </section>
 
+      {/* NASI INSTRUKTORZY */}
+      <section id="instruktorzy" className="py-24 md:py-32 bg-background">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-sm tracking-[0.3em] uppercase text-gold font-semibold mb-4">Zespół</div>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">Nasi instruktorzy</h2>
+            <p className="text-muted-foreground text-lg">Poznaj ludzi, którzy przeprowadzą Cię przez kurs bezpiecznie i bez stresu.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {instructors.map((instr, i) => (
+              <Card key={i} className="p-8 text-center border-border hover:border-gold/50 transition-smooth hover:-translate-y-2 hover:shadow-elegant bg-card">
+                <div className="w-28 h-28 rounded-full bg-gold-gradient flex items-center justify-center mx-auto mb-6 shadow-gold-soft text-4xl font-display font-bold text-gold-foreground">
+                  {instr.initial}
+                </div>
+                <h3 className="font-display text-2xl font-bold text-primary mb-1">{instr.name}</h3>
+                <div className="text-sm text-muted-foreground mb-4 tracking-wide uppercase">Instruktor jazdy</div>
+                <a href={`tel:${instr.tel}`} className="inline-flex items-center gap-2 text-gold font-semibold hover:opacity-80 transition-smooth">
+                  <Phone className="w-4 h-4" />
+                  {instr.phone}
+                </a>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* KURSY */}
-      <section id="kursy" className="py-24 md:py-32 bg-background">
+      <section id="kursy" className="py-24 md:py-32 bg-secondary">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="text-sm tracking-[0.3em] uppercase text-gold font-semibold mb-4">Oferta</div>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">Kursy dopasowane do Ciebie</h2>
             <p className="text-muted-foreground text-lg">Wybierz najlepszą opcję i ruszaj na drogę.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {courses.map((c, i) => (
-              <Card key={i} className={`p-8 transition-smooth hover:-translate-y-2 hover:shadow-elegant relative ${c.featured ? "border-gold border-2 bg-gradient-to-b from-gold/5 to-transparent" : "border-border"}`}>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {mainCourses.map((c, i) => (
+              <Card key={i} className={`p-8 transition-smooth hover:-translate-y-2 hover:shadow-elegant relative ${c.featured ? "border-gold border-2 bg-gradient-to-b from-gold/5 to-transparent" : "border-border bg-card"}`}>
                 {c.featured && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-gradient text-gold-foreground text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full shadow-gold-soft">
                     Najpopularniejszy
                   </div>
                 )}
-                <h3 className="font-display text-2xl font-bold text-primary mb-3">{c.name}</h3>
-                <div className="text-4xl font-display font-bold text-gradient-gold mb-6">{c.price}</div>
+                <div className="w-12 h-12 rounded-xl bg-gold-gradient flex items-center justify-center mb-4 shadow-gold-soft">
+                  <c.icon className="w-6 h-6 text-gold-foreground" />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-primary mb-2">{c.name}</h3>
+                <div className="text-3xl font-display font-bold text-gradient-gold mb-6">{c.price}</div>
                 <ul className="space-y-3 mb-8">
                   {c.features.map((f, j) => (
                     <li key={j} className="flex items-start gap-3 text-foreground/80">
@@ -224,6 +380,40 @@ const Index = () => {
               </Card>
             ))}
           </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+            {extraCourses.map((c, i) => (
+              <Card key={i} className="p-8 border-border bg-card transition-smooth hover:-translate-y-2 hover:shadow-elegant hover:border-gold/50">
+                <div className="w-12 h-12 rounded-xl bg-gold-gradient flex items-center justify-center mb-4 shadow-gold-soft">
+                  <c.icon className="w-6 h-6 text-gold-foreground" />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-primary mb-2">{c.name}</h3>
+                <div className="text-3xl font-display font-bold text-gradient-gold mb-6">{c.price}</div>
+                <ul className="space-y-3 mb-8">
+                  {c.features.map((f, j) => (
+                    <li key={j} className="flex items-start gap-3 text-foreground/80">
+                      <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary-deep transition-smooth" asChild>
+                  <a href="#kontakt">Wybieram</a>
+                </Button>
+              </Card>
+            ))}
+          </div>
+
+          {/* RATY 0% */}
+          <Card className="max-w-2xl mx-auto p-8 border-gold/40 bg-gradient-to-r from-gold/5 to-transparent text-center">
+            <div className="font-display text-2xl font-bold text-primary mb-3">Raty 0% – bez stresu finansowego</div>
+            <p className="text-foreground/80 leading-relaxed">
+              Pierwsza wpłata to tylko <strong className="text-primary">1 000 zł</strong> przy zapisie.
+              Każda kolejna rata ustalana jest indywidualnie —{" "}
+              <strong className="text-primary">po ukończeniu każdych 10 godzin jazdy</strong>.
+              Żadnych ukrytych kosztów, żadnego pośpiechu.
+            </p>
+          </Card>
         </div>
       </section>
 
@@ -240,7 +430,7 @@ const Index = () => {
               Zero zaskoczeń na egzaminie. Pełna znajomość gabarytów, sprzęgła i lusterek. Pewność, którą czuć od pierwszej minuty za kierownicą.
             </p>
             <ul className="space-y-3 mb-8">
-              {["Auta identyczne z egzaminacyjnymi WORD Poznań", "Pełen serwis i bezpieczeństwo", "Klimatyzacja i komfortowe wnętrze"].map((t, i) => (
+              {["Auta identyczne z egzaminacyjnymi WORD Poznań", "Pełen serwis i bezpieczeństwo", "Klimatyzacja i wygodne wnętrze"].map((t, i) => (
                 <li key={i} className="flex items-center gap-3 text-primary-foreground/90">
                   <div className="w-2 h-2 rounded-full bg-gold" /> {t}
                 </li>
@@ -254,8 +444,36 @@ const Index = () => {
         </div>
       </section>
 
+      {/* PROMOCJE */}
+      <section id="promocje" className="py-24 md:py-32 bg-background">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-sm tracking-[0.3em] uppercase text-gold font-semibold mb-4">Promocje</div>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">Aktualne oferty specjalne</h2>
+            <p className="text-muted-foreground text-lg">Skorzystaj z okazji – ilość miejsc ograniczona.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {promos.map((p, i) => (
+              <Card key={i} className="p-8 border-gold/40 bg-gradient-to-b from-gold/5 to-transparent hover:border-gold hover:shadow-elegant transition-smooth hover:-translate-y-2">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gold-gradient flex items-center justify-center shadow-gold-soft">
+                    <p.icon className="w-6 h-6 text-gold-foreground" />
+                  </div>
+                  <span className="text-xs font-bold tracking-widest uppercase text-gold border border-gold/40 px-3 py-1 rounded-full">{p.badge}</span>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-primary mb-3">{p.title}</h3>
+                <p className="text-foreground/80 leading-relaxed mb-6">{p.desc}</p>
+                <Button className="bg-gold-gradient text-gold-foreground hover:opacity-90 font-semibold transition-smooth" asChild>
+                  <a href={p.href}>{p.cta}</a>
+                </Button>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* OPINIE */}
-      <section id="opinie" className="py-24 md:py-32 bg-background">
+      <section id="opinie" className="py-24 md:py-32 bg-secondary">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="text-sm tracking-[0.3em] uppercase text-gold font-semibold mb-4">Opinie kursantów</div>
@@ -276,7 +494,7 @@ const Index = () => {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 md:py-32 bg-secondary">
+      <section id="faq" className="py-24 md:py-32 bg-background">
         <div className="container max-w-3xl">
           <div className="text-center mb-16">
             <div className="text-sm tracking-[0.3em] uppercase text-gold font-semibold mb-4">FAQ</div>
@@ -303,26 +521,27 @@ const Index = () => {
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">Zacznij swoją drogę dziś</h2>
             <p className="text-primary-foreground/80 text-lg">Zapisz się na kurs lub umów konsultację – odpowiadamy szybko.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
             {[
-              { icon: Phone, label: "Telefon", value: "601 234 567", href: "tel:601234567" },
-              { icon: Mail, label: "Email", value: "kontakt@emka-poznan.pl", href: "mailto:kontakt@emka-poznan.pl" },
+              { icon: Phone, label: "Biuro", value: "790 775 049", href: "tel:790775049" },
+              { icon: Phone, label: "Telefon", value: "790 775 037", href: "tel:790775037" },
+              { icon: Mail, label: "Email", value: "biuro@emka.edu.pl", href: "mailto:biuro@emka.edu.pl" },
               { icon: MapPin, label: "Lokalizacja", value: "Poznań", href: "#" },
             ].map((c, i) => (
               <a key={i} href={c.href} className="group">
-                <Card className="p-8 text-center bg-primary-foreground/5 backdrop-blur-md border-primary-foreground/10 hover:border-gold/50 hover:bg-primary-foreground/10 transition-smooth h-full">
-                  <div className="w-14 h-14 rounded-xl bg-gold-gradient flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-smooth">
-                    <c.icon className="w-7 h-7 text-gold-foreground" />
+                <Card className="p-6 text-center bg-primary-foreground/5 backdrop-blur-md border-primary-foreground/10 hover:border-gold/50 hover:bg-primary-foreground/10 transition-smooth h-full">
+                  <div className="w-12 h-12 rounded-xl bg-gold-gradient flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-smooth">
+                    <c.icon className="w-6 h-6 text-gold-foreground" />
                   </div>
                   <div className="text-xs tracking-widest uppercase text-gold mb-2">{c.label}</div>
-                  <div className="text-primary-foreground font-semibold">{c.value}</div>
+                  <div className="text-primary-foreground font-semibold text-sm">{c.value}</div>
                 </Card>
               </a>
             ))}
           </div>
           <div className="text-center">
             <Button size="lg" className="bg-gold-gradient text-gold-foreground hover:opacity-90 font-semibold text-base px-10 h-14 shadow-gold-soft hover:scale-105 transition-smooth" asChild>
-              <a href="tel:601234567">Zadzwoń teraz</a>
+              <a href="tel:790775049">Zadzwoń teraz</a>
             </Button>
           </div>
         </div>
@@ -350,7 +569,12 @@ const Index = () => {
                 </a>
               ))}
             </div>
-            <div className="text-sm opacity-70">© {new Date().getFullYear()} eMKA Poznań. Wszelkie prawa zastrzeżone.</div>
+            <div className="text-center md:text-right">
+              <div className="text-sm opacity-70 mb-2">© {new Date().getFullYear()} eMKA Poznań. Wszelkie prawa zastrzeżone.</div>
+              <button onClick={() => setShowSOM(true)} className="text-xs text-gold/70 hover:text-gold underline transition-smooth cursor-pointer">
+                Standardy ochrony małoletnich
+              </button>
+            </div>
           </div>
         </div>
       </footer>
