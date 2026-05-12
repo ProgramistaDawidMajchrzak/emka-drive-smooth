@@ -36,24 +36,24 @@ const instructors = [
 
 const mainCourses = [
   {
-    name: "Kurs e-learningowy",
+    name: "Kurs e‑learningowy",
     price: "4 000 zł",
     icon: GraduationCap,
-    features: ["30h teorii online (e-learning)", "30h jazd praktycznych", "Platforma e-learningowa 24/7", "Materiały i testy online", "Egzamin wewnętrzny"],
-    featured: false,
+    features: ["30h teorii online (e‑learning)", "30h jazd praktycznych", "Platforma e‑learningowa 24/7", "Materiały i testy online", "Egzamin wewnętrzny"],
+    featured: true,
   },
   {
     name: "Kurs stacjonarny",
     price: "4 500 zł",
     icon: Users,
-    features: ["30h teorii w sali", "30h jazd praktycznych", "Dostęp do platformy e-learningowej", "Materiały i testy online", "Egzamin wewnętrzny"],
-    featured: true,
+    features: ["30h teorii w sali", "30h jazd praktycznych", "Dostęp do platformy e‑learningowej", "Materiały i testy online", "Egzamin wewnętrzny"],
+    featured: false,
   },
   {
     name: "Kurs ekspresowy",
     price: "4 900 zł",
     icon: Zap,
-    features: ["Intensywny tryb nauki", "Krótszy termin realizacji", "Dostęp do platformy e-learningowej", "Indywidualny plan jazd", "Priorytetowe godziny"],
+    features: ["Intensywny tryb nauki", "Krótszy termin realizacji", "Dostęp do platformy e‑learningowej", "Indywidualny plan jazd", "Priorytetowe godziny"],
     featured: false,
   },
 ];
@@ -69,7 +69,7 @@ const extraCourses = [
     name: "Kurs – skrzynia automatyczna",
     price: "4 800 zł",
     icon: Award,
-    features: ["Pełny kurs kat. B", "Auto z automatyczną skrzynią biegów", "Podstawiamy auto z automatem", "Dostęp do platformy e-learningowej", "Egzamin wewnętrzny"],
+    features: ["Pełny kurs kat. B", "Auto z automatyczną skrzynią biegów", "Podstawiamy auto z automatem", "Dostęp do platformy e‑learningowej", "Egzamin wewnętrzny"],
   },
 ];
 
