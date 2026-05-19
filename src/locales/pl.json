@@ -1,0 +1,190 @@
+{
+  "promoBanner": "Promocja dla zapisanych do końca maja!",
+  "promoBannerCta": "Zadzwoń i dowiedz się więcej →",
+  "nav": {
+    "dlaczego": "Dlaczego my",
+    "oNas": "O nas",
+    "instruktorzy": "Instruktorzy",
+    "kursy": "Kursy",
+    "flota": "Flota",
+    "promocje": "Promocje",
+    "opinie": "Opinie",
+    "faq": "FAQ",
+    "kontakt": "Kontakt",
+    "zapiszSie": "Zapisz się",
+    "zapiszSieNaKurs": "Zapisz się na kurs"
+  },
+  "hero": {
+    "badge": "Ośrodek Szkolenia Kierowców · Poznań",
+    "h1_1": "Zdaj prawo jazdy",
+    "h1_2": "w Poznaniu",
+    "h1_3": "bez stresu",
+    "subtitle": "Szkolimy skutecznie, w przyjaznej atmosferze – krok po kroku do Twojego prawa jazdy.",
+    "ctaPrimary": "Zapisz się na kurs",
+    "ctaSecondary": "Zobacz ofertę",
+    "stat1Label": "Auto egzaminacyjne",
+    "stat2Label": "Zdawalność",
+    "stat3Label": "Lat doświadczenia"
+  },
+  "reasons": {
+    "sectionLabel": "Dlaczego eMKA",
+    "title": "Wybierz spokój i skuteczność",
+    "subtitle": "Wszystko, czego potrzebujesz, by pewnie zdać i pewnie jeździć.",
+    "items": [
+      { "title": "Auto 1:1 jak na egzaminie", "desc": "Jeździsz tym samym modelem, na którym później zdajesz egzamin państwowy. Zero zaskoczeń." },
+      { "title": "Przyjaźni instruktorzy", "desc": "Cierpliwi, wyrozumiali i pełni pasji – uczą bez krzyku i presji." },
+      { "title": "Luźna atmosfera", "desc": "Bezstresowa nauka w komfortowych warunkach. Lubimy to, co robimy." },
+      { "title": "Indywidualne podejście", "desc": "Tempo dopasowane do Ciebie. Każdy kursant traktowany jest wyjątkowo." },
+      { "title": "Wysoka zdawalność", "desc": "Solidne przygotowanie, sprawdzone metody, realne efekty." },
+      { "title": "Społeczność eMKA", "desc": "Setki zadowolonych kierowców rocznie. Dołącz do grona zdających." }
+    ]
+  },
+  "about": {
+    "sectionLabel": "O nas",
+    "title1": "Spokój.",
+    "title2": "Jakość.",
+    "title3": "Skuteczność.",
+    "p1": "eMKA to szkoła jazdy w Poznaniu, która stawia na jakość, spokój i skuteczność. Uczymy nie tylko zdać egzamin, ale przede wszystkim dobrze i pewnie jeździć na co dzień.",
+    "p2": "Nasi instruktorzy to doświadczeni profesjonaliści z ludzkim podejściem.",
+    "cta": "Porozmawiajmy"
+  },
+  "instructors": {
+    "sectionLabel": "Zespół",
+    "title": "Nasi instruktorzy",
+    "subtitle": "Poznaj ludzi, którzy przeprowadzą Cię przez kurs bezpiecznie i bez stresu.",
+    "role": "Instruktor jazdy",
+    "items": [
+      { "name": "Marcin", "phone": "796 330 063", "tel": "796330063" },
+      { "name": "Krzysztof", "phone": "790 775 037", "tel": "790775037" },
+      { "name": "Marianna", "phone": "790 775 049", "tel": "790775049" }
+    ]
+  },
+  "courses": {
+    "sectionLabel": "Oferta",
+    "title": "Kursy dopasowane do Ciebie",
+    "subtitle": "Wybierz najlepszą opcję i ruszaj na drogę.",
+    "popular": "Najpopularniejszy",
+    "cta": "Wybieram",
+    "main": [
+      {
+        "name": "Kurs e‑learningowy",
+        "price": "4 000 zł",
+        "features": ["30h teorii online (e‑learning)", "30h jazd praktycznych", "Platforma e‑learningowa 24/7", "Materiały i testy online", "Egzamin wewnętrzny"]
+      },
+      {
+        "name": "Kurs stacjonarny",
+        "price": "4 500 zł",
+        "features": ["30h teorii w sali", "30h jazd praktycznych", "Dostęp do platformy e‑learningowej", "Materiały i testy online", "Egzamin wewnętrzny"]
+      },
+      {
+        "name": "Kurs ekspresowy",
+        "price": "4 900 zł",
+        "features": ["Intensywny tryb nauki", "Krótszy termin realizacji", "Dostęp do platformy e‑learningowej", "Indywidualny plan jazd", "Priorytetowe godziny"]
+      }
+    ],
+    "extra": [
+      {
+        "name": "Jazdy doszkalające",
+        "price": "150 zł / h",
+        "features": ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy"]
+      },
+      {
+        "name": "Kurs – skrzynia automatyczna",
+        "price": "4 800 zł",
+        "features": ["Pełny kurs kat. B", "Auto z automatyczną skrzynią biegów", "Podstawiamy auto z automatem", "Dostęp do platformy e‑learningowej", "Egzamin wewnętrzny"]
+      }
+    ],
+    "raty": {
+      "title": "Raty 0% – bez stresu finansowego",
+      "desc": "Pierwsza wpłata to tylko {{amount}} przy zapisie. Każda kolejna rata ustalana jest indywidualnie — po ukończeniu każdych {{hours}} jazdy. Żadnych ukrytych kosztów, żadnego pośpiechu.",
+      "amount": "1 000 zł",
+      "hours": "10 godzin"
+    }
+  },
+  "fleet": {
+    "sectionLabel": "Flota",
+    "title1": "Uczysz się i zdajesz na",
+    "title2": "identycznym aucie",
+    "desc": "Zero zaskoczeń na egzaminie. Pełna znajomość gabarytów, sprzęgła i lusterek. Pewność, którą czuć od pierwszej minuty za kierownicą.",
+    "items": ["Auta identyczne z egzaminacyjnymi WORD Poznań", "Pełen serwis i bezpieczeństwo", "Klimatyzacja i wygodne wnętrze"]
+  },
+  "promos": {
+    "sectionLabel": "Promocje",
+    "title": "Aktualne oferty specjalne",
+    "subtitle": "Skorzystaj z okazji – ilość miejsc ograniczona.",
+    "items": [
+      {
+        "badge": "Do końca maja",
+        "title": "Kurs ekspresowy w cenie normalnego",
+        "desc": "Zapisz się do końca maja i jedź na kursie ekspresowym, płacąc tyle co za kurs stacjonarny. Zadzwoń i potwierdź termin – ilość miejsc ograniczona.",
+        "cta": "Zadzwoń i skorzystaj"
+      },
+      {
+        "badge": "Cały rok",
+        "title": "System poleceń – rabat dla Ciebie i kolegi",
+        "desc": "Przyprowadź znajomego do eMKA – oboje dostaniecie rabat na kurs. Zadzwoń, żeby dowiedzieć się więcej o warunkach i wysokości rabatu.",
+        "cta": "Dowiedz się więcej"
+      }
+    ]
+  },
+  "reviews": {
+    "sectionLabel": "Opinie kursantów",
+    "title": "Mówią o nas najlepiej",
+    "items": [
+      { "name": "Aleksandra K.", "text": "Świetna atmosfera, zero stresu i zdałam za pierwszym razem! Polecam każdemu." },
+      { "name": "Michał W.", "text": "Instruktor mega cierpliwy, wszystko tłumaczy na spokojnie. Najlepsza decyzja." },
+      { "name": "Patrycja N.", "text": "Profesjonalnie, miło i skutecznie. Auto identyczne jak na egzaminie – ogromny plus." }
+    ]
+  },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "title": "Najczęstsze pytania",
+    "items": [
+      { "q": "Ile trwa cały kurs prawa jazdy kat. B?", "a": "Standardowo 6–10 tygodni, w zależności od dostępności kursanta. Mamy też tryb ekspresowy – skróć czas do minimum." },
+      { "q": "Czy mogę jeździć tym samym autem na egzaminie?", "a": "Tak! Nasza flota to auta identyczne z egzaminacyjnymi WORD Poznań – uczysz się tam, gdzie zdajesz." },
+      { "q": "Jak wygląda płatność za kurs?", "a": "Oferujemy raty 0% – pierwsza wpłata to 1 000 zł przy zapisie. Każda kolejna rata ustalana jest indywidualnie po ukończeniu każdych 10 godzin jazdy." },
+      { "q": "Od jakiego wieku mogę zacząć kurs?", "a": "Kurs możesz rozpocząć 3 miesiące przed 18. urodzinami. Osoby w wieku 16 lat i 9 miesięcy mogą zacząć naukę za zgodą rodzica lub opiekuna prawnego." },
+      { "q": "Czy oferujecie kurs na skrzynię automatyczną?", "a": "Tak! Posiadamy auto z automatyczną skrzynią biegów – podstawiamy je dla chętnych. Kurs na automat kosztuje 4 800 zł." }
+    ]
+  },
+  "contact": {
+    "sectionLabel": "Kontakt",
+    "title": "Zacznij swoją drogę dziś",
+    "subtitle": "Zapisz się na kurs lub umów konsultację – odpowiadamy szybko.",
+    "labelBiuro": "Biuro",
+    "labelTelefon": "Telefon",
+    "labelEmail": "Email",
+    "labelLokalizacja": "Lokalizacja",
+    "lokalizacjaValue": "Poznań",
+    "callNow": "Zadzwoń teraz",
+    "whatsapp": "Napisz na WhatsApp"
+  },
+  "footer": {
+    "rights": "eMKA Poznań. Wszelkie prawa zastrzeżone.",
+    "som": "Standardy ochrony małoletnich"
+  },
+  "teenModal": {
+    "title": "Masz 16 lat i 9 miesięcy?",
+    "desc": "Nie musisz czekać do 18. urodzin! Możesz rozpocząć naukę jazdy już w wieku 16 lat i 9 miesięcy — wystarczy zgoda rodzica lub opiekuna prawnego.\n\nZadzwoń do nas i umów się na start kursu jeszcze przed swoimi 18. urodzinami.",
+    "ctaCall": "Zadzwoń teraz",
+    "ctaClose": "Zamknij"
+  },
+  "somModal": {
+    "title": "Standardy ochrony małoletnich",
+    "p1": "Ośrodek Szkolenia Kierowców eMKA w Poznaniu wdrożył Standardy Ochrony Małoletnich zgodnie z ustawą z dnia 28 lipca 2023 r. o zmianie ustawy – Kodeks rodzinny i opiekuńczy oraz niektórych innych ustaw (tzw. ustawa Kamilkowa).",
+    "p2": "Nasze standardy obejmują m.in.:",
+    "items": [
+      "Weryfikację pracowników i instruktorów pod kątem niekaralności",
+      "Procedury reagowania na sygnały krzywdzenia małoletnich",
+      "Zasady bezpiecznego kontaktu z kursantami nieletnimi",
+      "Wyznaczenie osoby odpowiedzialnej za ochronę małoletnich w ośrodku"
+    ],
+    "p3": "Pełny dokument standardów dostępny jest w biurze ośrodka oraz na życzenie przesyłany drogą mailową. W razie pytań:",
+    "close": "Zamknij"
+  },
+  "kamilkaBanner": {
+    "title": "Standardy ochrony małoletnich",
+    "subtitle": "eMKA wdrożyła standardy zgodnie z ustawą Kamilkową (ustawa z 28.07.2023 r.)",
+    "cta": "Czytaj więcej"
+  }
+}

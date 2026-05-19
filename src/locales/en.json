@@ -1,0 +1,190 @@
+{
+  "promoBanner": "Special offer for sign-ups by end of May!",
+  "promoBannerCta": "Call us to find out more →",
+  "nav": {
+    "dlaczego": "Why us",
+    "oNas": "About",
+    "instruktorzy": "Instructors",
+    "kursy": "Courses",
+    "flota": "Fleet",
+    "promocje": "Offers",
+    "opinie": "Reviews",
+    "faq": "FAQ",
+    "kontakt": "Contact",
+    "zapiszSie": "Sign up",
+    "zapiszSieNaKurs": "Sign up for a course"
+  },
+  "hero": {
+    "badge": "Driving School · Poznań",
+    "h1_1": "Get your driving licence",
+    "h1_2": "in Poznań",
+    "h1_3": "stress-free",
+    "subtitle": "We train effectively, in a friendly atmosphere – step by step towards your driving licence.",
+    "ctaPrimary": "Sign up for a course",
+    "ctaSecondary": "View our offer",
+    "stat1Label": "Exam-identical car",
+    "stat2Label": "Pass rate",
+    "stat3Label": "Years of experience"
+  },
+  "reasons": {
+    "sectionLabel": "Why eMKA",
+    "title": "Choose calm and effectiveness",
+    "subtitle": "Everything you need to pass confidently and drive safely.",
+    "items": [
+      { "title": "1:1 exam car", "desc": "You train on the exact same model you'll use in the state exam. No surprises." },
+      { "title": "Friendly instructors", "desc": "Patient, understanding and passionate – they teach without shouting or pressure." },
+      { "title": "Relaxed atmosphere", "desc": "Stress-free learning in comfortable conditions. We love what we do." },
+      { "title": "Individual approach", "desc": "Pace tailored to you. Every student is treated individually." },
+      { "title": "High pass rate", "desc": "Solid preparation, proven methods, real results." },
+      { "title": "eMKA community", "desc": "Hundreds of satisfied drivers every year. Join the club." }
+    ]
+  },
+  "about": {
+    "sectionLabel": "About us",
+    "title1": "Calm.",
+    "title2": "Quality.",
+    "title3": "Effectiveness.",
+    "p1": "eMKA is a driving school in Poznań focused on quality, calm and effectiveness. We don't just teach you to pass the exam – we teach you to drive confidently every day.",
+    "p2": "Our instructors are experienced professionals with a human touch.",
+    "cta": "Let's talk"
+  },
+  "instructors": {
+    "sectionLabel": "Team",
+    "title": "Our instructors",
+    "subtitle": "Meet the people who will guide you through the course safely and stress-free.",
+    "role": "Driving instructor",
+    "items": [
+      { "name": "Marcin", "phone": "796 330 063", "tel": "796330063" },
+      { "name": "Krzysztof", "phone": "790 775 037", "tel": "790775037" },
+      { "name": "Marianna", "phone": "790 775 049", "tel": "790775049" }
+    ]
+  },
+  "courses": {
+    "sectionLabel": "Offer",
+    "title": "Courses tailored to you",
+    "subtitle": "Choose the best option and hit the road.",
+    "popular": "Most popular",
+    "cta": "Choose",
+    "main": [
+      {
+        "name": "E‑learning course",
+        "price": "4 000 PLN",
+        "features": ["30h of online theory (e‑learning)", "30h of practical driving", "E‑learning platform 24/7", "Materials & online tests", "Internal exam"]
+      },
+      {
+        "name": "Classroom course",
+        "price": "4 500 PLN",
+        "features": ["30h of classroom theory", "30h of practical driving", "Access to e‑learning platform", "Materials & online tests", "Internal exam"]
+      },
+      {
+        "name": "Express course",
+        "price": "4 900 PLN",
+        "features": ["Intensive learning mode", "Shorter completion time", "Access to e‑learning platform", "Individual driving plan", "Priority hours"]
+      }
+    ],
+    "extra": [
+      {
+        "name": "Refresher lessons",
+        "price": "150 PLN / h",
+        "features": ["Exam car", "Manoeuvring area", "Exam routes", "For licensed drivers"]
+      },
+      {
+        "name": "Automatic gearbox course",
+        "price": "4 800 PLN",
+        "features": ["Full cat. B course", "Automatic gearbox car", "We provide the automatic car", "Access to e‑learning platform", "Internal exam"]
+      }
+    ],
+    "raty": {
+      "title": "0% instalments – no financial stress",
+      "desc": "First payment is only {{amount}} upon enrolment. Each subsequent instalment is agreed individually — after completing every {{hours}} of driving. No hidden costs, no rush.",
+      "amount": "1 000 PLN",
+      "hours": "10 hours"
+    }
+  },
+  "fleet": {
+    "sectionLabel": "Fleet",
+    "title1": "You learn and take the exam in",
+    "title2": "the identical car",
+    "desc": "No surprises at the exam. Full familiarity with dimensions, clutch and mirrors. Confidence you'll feel from the very first minute behind the wheel.",
+    "items": ["Cars identical to WORD Poznań exam vehicles", "Full service and safety", "Air conditioning and comfortable interior"]
+  },
+  "promos": {
+    "sectionLabel": "Offers",
+    "title": "Current special offers",
+    "subtitle": "Take advantage – limited places available.",
+    "items": [
+      {
+        "badge": "Until end of May",
+        "title": "Express course at standard price",
+        "desc": "Sign up by end of May and take the express course paying the standard course price. Call to confirm your spot – limited availability.",
+        "cta": "Call and take advantage"
+      },
+      {
+        "badge": "All year",
+        "title": "Referral system – discount for you and a friend",
+        "desc": "Bring a friend to eMKA – you both get a discount on the course. Call to find out more about the terms and discount amount.",
+        "cta": "Find out more"
+      }
+    ]
+  },
+  "reviews": {
+    "sectionLabel": "Student reviews",
+    "title": "They speak for us",
+    "items": [
+      { "name": "Aleksandra K.", "text": "Great atmosphere, zero stress and I passed first time! I recommend it to everyone." },
+      { "name": "Michał W.", "text": "The instructor is super patient, explains everything calmly. Best decision." },
+      { "name": "Patrycja N.", "text": "Professional, friendly and effective. Car identical to the exam one – a huge plus." }
+    ]
+  },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "title": "Frequently asked questions",
+    "items": [
+      { "q": "How long does the full cat. B driving course take?", "a": "Typically 6–10 weeks, depending on the student's availability. We also offer an express mode to shorten the time." },
+      { "q": "Can I drive the same car at the exam?", "a": "Yes! Our fleet consists of cars identical to WORD Poznań exam vehicles – you learn where you take the exam." },
+      { "q": "How does payment work?", "a": "We offer 0% instalments – first payment is 1 000 PLN upon enrolment. Each subsequent instalment is agreed individually after completing every 10 hours of driving." },
+      { "q": "What is the minimum age to start the course?", "a": "You can start the course 3 months before your 18th birthday. Students aged 16 years and 9 months can start with parental or guardian consent." },
+      { "q": "Do you offer an automatic gearbox course?", "a": "Yes! We have an automatic gearbox car – we provide it for interested students. The automatic course costs 4 800 PLN." }
+    ]
+  },
+  "contact": {
+    "sectionLabel": "Contact",
+    "title": "Start your journey today",
+    "subtitle": "Sign up for a course or arrange a consultation – we respond quickly.",
+    "labelBiuro": "Office",
+    "labelTelefon": "Phone",
+    "labelEmail": "Email",
+    "labelLokalizacja": "Location",
+    "lokalizacjaValue": "Poznań",
+    "callNow": "Call now",
+    "whatsapp": "Message on WhatsApp"
+  },
+  "footer": {
+    "rights": "eMKA Poznań. All rights reserved.",
+    "som": "Child protection standards"
+  },
+  "teenModal": {
+    "title": "Are you 16 years and 9 months old?",
+    "desc": "You don't have to wait until you're 18! You can start learning to drive at the age of 16 years and 9 months — you just need parental or guardian consent.\n\nCall us and arrange the start of your course before your 18th birthday.",
+    "ctaCall": "Call now",
+    "ctaClose": "Close"
+  },
+  "somModal": {
+    "title": "Child protection standards",
+    "p1": "The eMKA Driving School in Poznań has implemented Child Protection Standards in accordance with the Act of 28 July 2023 amending the Family and Guardianship Code and other acts (the so-called Kamilek Act).",
+    "p2": "Our standards include:",
+    "items": [
+      "Verification of employees and instructors for criminal records",
+      "Procedures for responding to signs of harm to minors",
+      "Rules for safe contact with underage students",
+      "Designation of a person responsible for child protection at the school"
+    ],
+    "p3": "The full standards document is available at our office and can be sent by email on request. For questions:",
+    "close": "Close"
+  },
+  "kamilkaBanner": {
+    "title": "Child protection standards",
+    "subtitle": "eMKA has implemented standards in accordance with the Kamilek Act (Act of 28.07.2023)",
+    "cta": "Read more"
+  }
+}
