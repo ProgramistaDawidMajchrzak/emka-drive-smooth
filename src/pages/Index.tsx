@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Car, Users, Heart, Target, Award, Phone, Mail, MapPin, Instagram, Facebook, Music2, Menu, X, Check, Star, Sparkles, Gift, GraduationCap, Zap, Shield, Clock } from "lucide-react";
+import { Car, Users, Heart, Target, Award, Phone, Mail, MapPin, Instagram, Facebook, Music2, Menu, X, Check, Star, Sparkles, Gift, GraduationCap, Zap, Shield, Clock, FileText } from "lucide-react";
 import logo from "@/assets/emka-logo.png";
 import cars from "@/assets/emka-cars.jpg";
 
@@ -127,6 +127,18 @@ const Index = () => {
               {somItems.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
             <p>{t("somModal.p3")} <strong>biuro@emka.edu.pl</strong></p>
+          </div>
+          <div className="flex flex-wrap gap-3 mt-4 pt-4 border-t border-border">
+            <a href="/standardy-ochrony-skrocona.pdf" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gold-gradient text-gold-foreground font-semibold px-4 py-2 rounded-lg text-sm hover:opacity-90 transition-smooth">
+              <FileText className="w-4 h-4" />
+              Wersja skrócona (PDF)
+            </a>
+            <a href="/standardy-ochrony-pelna.pdf" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-gold/40 text-gold font-semibold px-4 py-2 rounded-lg text-sm hover:bg-gold/10 transition-smooth">
+              <FileText className="w-4 h-4" />
+              Wersja pełna (PDF)
+            </a>
           </div>
           <Button variant="outline" onClick={() => setShowSOM(false)} className="mt-2">{t("somModal.close")}</Button>
         </DialogContent>
@@ -590,10 +602,22 @@ const Index = () => {
                 <div className="text-sm text-primary-foreground/70 mt-0.5">{t("kamilkaBanner.subtitle")}</div>
               </div>
             </div>
-            <Button variant="outline" onClick={() => setShowSOM(true)}
-              className="border-gold/40 text-gold hover:bg-gold hover:text-gold-foreground flex-shrink-0 font-semibold">
-              {t("kamilkaBanner.cta")}
-            </Button>
+            <div className="flex flex-wrap gap-3 flex-shrink-0">
+              <Button variant="outline" onClick={() => setShowSOM(true)}
+                className="border-gold/40 text-gold hover:bg-gold hover:text-gold-foreground font-semibold">
+                {t("kamilkaBanner.cta")}
+              </Button>
+              <a href="/standardy-ochrony-skrocona.pdf" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-gold/30 text-primary-foreground/70 hover:text-gold hover:border-gold/60 font-semibold px-4 py-2 rounded-lg text-sm transition-smooth">
+                <FileText className="w-4 h-4" />
+                PDF skrócony
+              </a>
+              <a href="/standardy-ochrony-pelna.pdf" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-gold/30 text-primary-foreground/70 hover:text-gold hover:border-gold/60 font-semibold px-4 py-2 rounded-lg text-sm transition-smooth">
+                <FileText className="w-4 h-4" />
+                PDF pełny
+              </a>
+            </div>
           </div>
         </div>
       </div>
