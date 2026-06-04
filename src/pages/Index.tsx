@@ -550,7 +550,7 @@ const Index = () => {
               {[
                 { icon: Instagram, href: "https://www.instagram.com/emka_osk", label: "eMKA na Instagramie" },
                 { icon: Facebook, href: "https://www.facebook.com/share/1CjRuBAvUa/", label: "eMKA na Facebooku" },
-                { icon: Music2, href: "https://www.tiktok.com/@emka.osk1", label: "eMKA na TikToku" },
+                { icon: Music2, href: "https://www.tiktok.com/@emka.osk", label: "eMKA na TikToku" },
               ].map((s, i) => (
                 <a key={i} href={s.href} target="_blank" rel="noopener noreferrer"
                   className="w-11 h-11 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold hover:text-gold-foreground hover:border-gold transition-smooth"
