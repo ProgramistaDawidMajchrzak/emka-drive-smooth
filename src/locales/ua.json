@@ -10,9 +10,21 @@
     "promocje": "Акції",
     "opinie": "Відгуки",
     "faq": "FAQ",
+    "znajdzNas": "Знайдіть нас",
     "kontakt": "Контакт",
     "zapiszSie": "Записатись",
     "zapiszSieNaKurs": "Записатись на курс"
+  },
+  "findUs": {
+    "sectionLabel": "Локації",
+    "title": "Знайдіть нас",
+    "subtitle": "Офіс, майданчик для маневрування та навчальна аудиторія — все у Познані.",
+    "openInMaps": "Відкрити в Google Maps",
+    "locations": [
+      { "name": "Офіс", "address": "Dąbrowskiego 143\nPoznań 60-577" },
+      { "name": "Майданчик для маневрування", "address": "Sytkowska 45\nPoznań 60-413" },
+      { "name": "Навчальна аудиторія", "subtitle": "ODK os. Pod Lipami", "address": "os. Pod Lipami 108a\nPoznań 61-638" }
+    ]
   },
   "hero": {
     "badge": "Автошкола · Познань",

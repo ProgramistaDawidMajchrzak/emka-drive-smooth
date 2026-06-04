@@ -10,9 +10,21 @@
     "promocje": "Offers",
     "opinie": "Reviews",
     "faq": "FAQ",
+    "znajdzNas": "Find us",
     "kontakt": "Contact",
     "zapiszSie": "Sign up",
     "zapiszSieNaKurs": "Sign up for a course"
+  },
+  "findUs": {
+    "sectionLabel": "Locations",
+    "title": "Find us",
+    "subtitle": "Office, manoeuvring area and lecture room — all in Poznań.",
+    "openInMaps": "Open in Google Maps",
+    "locations": [
+      { "name": "Office", "address": "Dąbrowskiego 143\nPoznań 60-577" },
+      { "name": "Manoeuvring area", "address": "Sytkowska 45\nPoznań 60-413" },
+      { "name": "Lecture room", "subtitle": "ODK os. Pod Lipami", "address": "os. Pod Lipami 108a\nPoznań 61-638" }
+    ]
   },
   "hero": {
     "badge": "Driving School · Poznań",

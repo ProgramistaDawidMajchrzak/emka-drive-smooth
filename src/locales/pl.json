@@ -10,9 +10,21 @@
     "promocje": "Promocje",
     "opinie": "Opinie",
     "faq": "FAQ",
+    "znajdzNas": "Znajdź nas",
     "kontakt": "Kontakt",
     "zapiszSie": "Zapisz się",
     "zapiszSieNaKurs": "Zapisz się na kurs"
+  },
+  "findUs": {
+    "sectionLabel": "Lokalizacje",
+    "title": "Znajdź nas",
+    "subtitle": "Biuro, plac manewrowy i sala wykładowa — wszystko w Poznaniu.",
+    "openInMaps": "Otwórz w Google Maps",
+    "locations": [
+      { "name": "Biuro", "address": "Dąbrowskiego 143\nPoznań 60-577" },
+      { "name": "Plac manewrowy", "address": "Sytkowska 45\nPoznań 60-413" },
+      { "name": "Sala wykładowa", "subtitle": "ODK os. Pod Lipami", "address": "os. Pod Lipami 108a\nPoznań 61-638" }
+    ]
   },
   "hero": {
     "badge": "Ośrodek Szkolenia Kierowców · Poznań",

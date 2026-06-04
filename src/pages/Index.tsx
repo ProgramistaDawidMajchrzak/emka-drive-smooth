@@ -19,6 +19,21 @@ const mainCourseIcons = [GraduationCap, Users, Zap];
 const extraCourseIcons = [Car, Award];
 const promoIcons = [Sparkles, Gift, Clock];
 
+const locations = [
+  {
+    mapUrl: "https://maps.google.com/maps?q=D%C4%85browskiego+143%2C+Pozna%C5%84+60-577&output=embed&hl=pl&z=15",
+    mapsLink: "https://maps.google.com/maps?q=D%C4%85browskiego+143%2C+Pozna%C5%84+60-577",
+  },
+  {
+    mapUrl: "https://maps.google.com/maps?q=Sytkowska+45%2C+Pozna%C5%84+60-413&output=embed&hl=pl&z=15",
+    mapsLink: "https://maps.google.com/maps?q=Sytkowska+45%2C+Pozna%C5%84+60-413",
+  },
+  {
+    mapUrl: "https://maps.google.com/maps?q=os.+Pod+Lipami+108a%2C+Pozna%C5%84+61-638&output=embed&hl=pl&z=15",
+    mapsLink: "https://maps.google.com/maps?q=os.+Pod+Lipami+108a%2C+Pozna%C5%84+61-638",
+  },
+];
+
 const LANGS = [
   { code: "pl", label: "PL", flag: "🇵🇱" },
   { code: "en", label: "EN", flag: "🇬🇧" },
@@ -41,6 +56,7 @@ const Index = () => {
     { href: "#promocje", label: t("nav.promocje") },
     { href: "#opinie", label: t("nav.opinie") },
     { href: "#faq", label: t("nav.faq") },
+    { href: "#znajdz-nas", label: t("nav.znajdzNas") },
     { href: "#kontakt", label: t("nav.kontakt") },
   ];
 
@@ -50,6 +66,7 @@ const Index = () => {
   const promos = (t("promos.items", { returnObjects: true }) as { badge: string; title: string; desc: string; cta: string }[]);
   const reviews = (t("reviews.items", { returnObjects: true }) as { name: string; text: string }[]);
   const faqs = (t("faq.items", { returnObjects: true }) as { q: string; a: string }[]);
+  const findUsLocations = (t("findUs.locations", { returnObjects: true }) as { name: string; subtitle?: string; address: string }[]);
   const instructors = (t("instructors.items", { returnObjects: true }) as { name: string; phone: string; tel: string }[]);
   const fleetItems = (t("fleet.items", { returnObjects: true }) as string[]);
   const somItems = (t("somModal.items", { returnObjects: true }) as string[]);
@@ -463,6 +480,52 @@ const Index = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      {/* ZNAJDŹ NAS */}
+      <section id="znajdz-nas" className="py-24 md:py-32 bg-secondary">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-sm tracking-[0.3em] uppercase text-gold font-semibold mb-4">{t("findUs.sectionLabel")}</div>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">{t("findUs.title")}</h2>
+            <p className="text-muted-foreground text-lg">{t("findUs.subtitle")}</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {findUsLocations.map((loc, i) => (
+              <Card key={i} className="overflow-hidden border-border hover:border-gold/50 transition-smooth hover:shadow-elegant">
+                <div className="h-48 bg-muted">
+                  <iframe
+                    src={locations[i].mapUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    title={loc.name}
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-start gap-3 mb-4">
+                    <MapPin className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-display font-bold text-primary text-lg leading-tight">{loc.name}</div>
+                      {loc.subtitle && <div className="text-xs text-muted-foreground mb-1">{loc.subtitle}</div>}
+                      <div className="text-foreground/70 text-sm leading-relaxed whitespace-pre-line">{loc.address}</div>
+                    </div>
+                  </div>
+                  <a
+                    href={locations[i].mapsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-gold text-sm font-semibold hover:opacity-80 transition-smooth"
+                  >
+                    {t("findUs.openInMaps")} →
+                  </a>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
