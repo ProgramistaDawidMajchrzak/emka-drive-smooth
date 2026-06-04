@@ -498,7 +498,7 @@ const Index = () => {
             <Button size="lg" className="bg-gold-gradient text-gold-foreground hover:opacity-90 font-semibold text-base px-10 h-14 shadow-gold-soft hover:scale-105 transition-smooth" asChild>
               <a href="tel:790775049">{t("contact.callNow")}</a>
             </Button>
-            <a href="https://wa.me/48790775049" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/48790775037" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#25D366] text-white font-semibold px-8 h-14 rounded-xl hover:bg-[#1ebe5d] transition-smooth shadow-lg text-base">
               <WhatsAppIcon />
               {t("contact.whatsapp")}
@@ -508,7 +508,7 @@ const Index = () => {
       </section>
 
       {/* FLOATING WHATSAPP */}
-      <a href="https://wa.me/48790775049" target="_blank" rel="noopener noreferrer"
+      <a href="https://wa.me/48790775037" target="_blank" rel="noopener noreferrer"
         aria-label="WhatsApp"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-smooth">
         <WhatsAppIcon />
