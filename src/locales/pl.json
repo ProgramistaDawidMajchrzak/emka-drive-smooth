@@ -1,5 +1,5 @@
 {
-  "promoBanner": "Promocja dla zapisanych do końca maja!",
+  "promoBanner": "Zapisz się już teraz!",
   "promoBannerCta": "Zadzwoń i dowiedz się więcej →",
   "nav": {
     "dlaczego": "Dlaczego my",
@@ -124,6 +124,12 @@
         "title": "System poleceń – rabat dla Ciebie i kolegi",
         "desc": "Przyprowadź znajomego do eMKA – oboje dostaniecie rabat na kurs. Zadzwoń, żeby dowiedzieć się więcej o warunkach i wysokości rabatu.",
         "cta": "Dowiedz się więcej"
+      },
+      {
+        "badge": "Do końca czerwca",
+        "title": "Kurs e‑learningowy + 2 godziny doszkalające gratis",
+        "desc": "Zapisz się na kurs e‑learningowy do końca czerwca i otrzymaj 2 dodatkowe godziny jazdy doszkalającej przed egzaminem całkowicie za darmo. Łącznie 32 godziny na drodze!",
+        "cta": "Skorzystaj z oferty"
       }
     ]
   },

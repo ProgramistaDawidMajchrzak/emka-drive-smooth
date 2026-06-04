@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Car, Users, Heart, Target, Award, Phone, Mail, MapPin, Instagram, Facebook, Music2, Menu, X, Check, Star, Sparkles, Gift, GraduationCap, Zap, Shield } from "lucide-react";
+import { Car, Users, Heart, Target, Award, Phone, Mail, MapPin, Instagram, Facebook, Music2, Menu, X, Check, Star, Sparkles, Gift, GraduationCap, Zap, Shield, Clock } from "lucide-react";
 import logo from "@/assets/emka-logo.png";
 import cars from "@/assets/emka-cars.jpg";
 
@@ -17,7 +17,7 @@ const WhatsAppIcon = () => (
 const reasonIcons = [Car, Heart, Sparkles, Target, Award, Users];
 const mainCourseIcons = [GraduationCap, Users, Zap];
 const extraCourseIcons = [Car, Award];
-const promoIcons = [Sparkles, Gift];
+const promoIcons = [Sparkles, Gift, Clock];
 
 const LANGS = [
   { code: "pl", label: "PL", flag: "🇵🇱" },

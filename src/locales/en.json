@@ -1,5 +1,5 @@
 {
-  "promoBanner": "Special offer for sign-ups by end of May!",
+  "promoBanner": "Sign up now!",
   "promoBannerCta": "Call us to find out more →",
   "nav": {
     "dlaczego": "Why us",
@@ -124,6 +124,12 @@
         "title": "Referral system – discount for you and a friend",
         "desc": "Bring a friend to eMKA – you both get a discount on the course. Call to find out more about the terms and discount amount.",
         "cta": "Find out more"
+      },
+      {
+        "badge": "Until end of June",
+        "title": "E‑learning course + 2 free refresher lessons",
+        "desc": "Sign up for the e‑learning course by end of June and get 2 additional refresher driving lessons before your exam completely free. 32 hours on the road in total!",
+        "cta": "Take advantage"
       }
     ]
   },
