@@ -111,6 +111,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: "Invalid payload" });
   }
 
+  console.log("payu-webhook received", order?.orderId, order?.status);
+
   if (order?.status === "COMPLETED") {
     try {
       await sendOrderEmails(order);
