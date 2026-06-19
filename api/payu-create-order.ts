@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { getPayuAccessToken } from "../lib/payu-auth";
-import { PAYU_COURSES } from "../lib/payu-courses";
+import { getPayuAccessToken } from "../lib/payu-auth.js";
+import { PAYU_COURSES } from "../lib/payu-courses.js";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[+0-9 ]{7,15}$/;
