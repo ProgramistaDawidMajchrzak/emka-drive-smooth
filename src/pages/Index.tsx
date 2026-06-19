@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import PaymentModal, { type PayableCourse } from "@/components/PaymentModal";
 import { Car, Users, Heart, Target, Award, Phone, Mail, MapPin, Instagram, Facebook, Music2, Menu, X, Check, Star, Sparkles, Gift, GraduationCap, Zap, Shield, Clock, FileText } from "lucide-react";
 import logo from "@/assets/emka-logo.png";
 import cars from "@/assets/emka-cars.jpg";
@@ -46,6 +47,7 @@ const Index = () => {
   const [open, setOpen] = useState(false);
   const [showTeenModal, setShowTeenModal] = useState(false);
   const [showSOM, setShowSOM] = useState(false);
+  const [payingCourse, setPayingCourse] = useState<PayableCourse | null>(null);
 
   const nav = [
     { href: "#dlaczego", label: t("nav.dlaczego") },
@@ -61,8 +63,8 @@ const Index = () => {
   ];
 
   const reasons = (t("reasons.items", { returnObjects: true }) as { title: string; desc: string }[]);
-  const mainCourses = (t("courses.main", { returnObjects: true }) as { name: string; price: string; features: string[] }[]);
-  const extraCourses = (t("courses.extra", { returnObjects: true }) as { name: string; price: string; features: string[] }[]);
+  const mainCourses = (t("courses.main", { returnObjects: true }) as { id: string; name: string; price: string; amount: number; payOnline: boolean; features: string[] }[]);
+  const extraCourses = (t("courses.extra", { returnObjects: true }) as { id: string; name: string; price: string; amount: number; payOnline: boolean; features: string[] }[]);
   const promos = (t("promos.items", { returnObjects: true }) as { badge: string; title: string; desc: string; cta: string }[]);
   const reviews = (t("reviews.items", { returnObjects: true }) as { name: string; text: string }[]);
   const faqs = (t("faq.items", { returnObjects: true }) as { q: string; a: string }[]);
@@ -143,6 +145,9 @@ const Index = () => {
           <Button variant="outline" onClick={() => setShowSOM(false)} className="mt-2">{t("somModal.close")}</Button>
         </DialogContent>
       </Dialog>
+
+      {/* MODAL PŁATNOŚCI PAYU */}
+      <PaymentModal course={payingCourse} onClose={() => setPayingCourse(null)} />
 
       {/* PROMO BANNER */}
       <div className="fixed top-0 inset-x-0 z-[60] bg-gold-gradient text-gold-foreground text-center py-2 px-4 text-sm font-semibold">
@@ -359,9 +364,18 @@ const Index = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className={`w-full ${featured ? "bg-gold-gradient text-gold-foreground hover:opacity-90" : "bg-primary text-primary-foreground hover:bg-primary-deep"} transition-smooth`} asChild>
-                    <a href="#kontakt">{t("courses.cta")}</a>
-                  </Button>
+                  {c.payOnline ? (
+                    <Button
+                      className={`w-full ${featured ? "bg-gold-gradient text-gold-foreground hover:opacity-90" : "bg-primary text-primary-foreground hover:bg-primary-deep"} transition-smooth`}
+                      onClick={() => setPayingCourse({ id: c.id, name: c.name, price: c.price, amount: c.amount })}
+                    >
+                      {t("payment.ctaButton")}
+                    </Button>
+                  ) : (
+                    <Button className={`w-full ${featured ? "bg-gold-gradient text-gold-foreground hover:opacity-90" : "bg-primary text-primary-foreground hover:bg-primary-deep"} transition-smooth`} asChild>
+                      <a href="#kontakt">{t("courses.cta")}</a>
+                    </Button>
+                  )}
                 </Card>
               );
             })}
@@ -384,9 +398,18 @@ const Index = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary-deep transition-smooth" asChild>
-                    <a href="#kontakt">{t("courses.cta")}</a>
-                  </Button>
+                  {c.payOnline ? (
+                    <Button
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary-deep transition-smooth"
+                      onClick={() => setPayingCourse({ id: c.id, name: c.name, price: c.price, amount: c.amount })}
+                    >
+                      {t("payment.ctaButton")}
+                    </Button>
+                  ) : (
+                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary-deep transition-smooth" asChild>
+                      <a href="#kontakt">{t("courses.cta")}</a>
+                    </Button>
+                  )}
                 </Card>
               );
             })}
