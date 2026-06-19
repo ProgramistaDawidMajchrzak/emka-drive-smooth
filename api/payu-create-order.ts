@@ -54,7 +54,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
       products: [{ name: course.name, unitPrice: amountGrosze, quantity: "1" }],
       continueUrl: `${origin}/platnosc/dziekujemy`,
-      notifyUrl: `${origin}/api/payu-webhook`,
+      notifyUrl: process.env.VERCEL_AUTOMATION_BYPASS_SECRET
+        ? `${origin}/api/payu-webhook?x-vercel-protection-bypass=${process.env.VERCEL_AUTOMATION_BYPASS_SECRET}`
+        : `${origin}/api/payu-webhook`,
     };
 
     const payuRes = await fetch(`${process.env.PAYU_API_URL}/api/v2_1/orders`, {
