@@ -79,30 +79,45 @@
     "cta": "Choose",
     "main": [
       {
+        "id": "elearning",
         "name": "E‑learning course",
         "price": "4 000 PLN",
+        "amount": 4000,
+        "payOnline": true,
         "features": ["30h of online theory (e‑learning)", "30h of practical driving", "E‑learning platform 24/7", "Materials & online tests", "Internal exam"]
       },
       {
+        "id": "stacjonarny",
         "name": "Classroom course",
         "price": "4 500 PLN",
+        "amount": 4500,
+        "payOnline": true,
         "features": ["30h of classroom theory", "30h of practical driving", "Access to e‑learning platform", "Materials & online tests", "Internal exam"]
       },
       {
+        "id": "ekspresowy",
         "name": "Express course",
         "price": "4 900 PLN",
+        "amount": 4900,
+        "payOnline": true,
         "features": ["Intensive learning mode", "Shorter completion time", "Access to e‑learning platform", "Individual driving plan", "Priority hours"]
       }
     ],
     "extra": [
       {
+        "id": "doszkalajace",
         "name": "Refresher lessons",
-        "price": "150 PLN / h",
+        "price": "180 PLN / h",
+        "amount": 180,
+        "payOnline": false,
         "features": ["Exam car", "Manoeuvring area", "Exam routes", "For licensed drivers"]
       },
       {
+        "id": "automat",
         "name": "Automatic gearbox course",
         "price": "4 800 PLN",
+        "amount": 4800,
+        "payOnline": true,
         "features": ["Full cat. B course", "Automatic gearbox car", "We provide the automatic car", "Access to e‑learning platform", "Internal exam"]
       }
     ],
@@ -204,5 +219,29 @@
     "title": "Child protection standards",
     "subtitle": "eMKA has implemented standards in accordance with the Kamilek Act (Act of 28.07.2023)",
     "cta": "Read more"
+  },
+  "payment": {
+    "ctaButton": "Sign up and pay",
+    "modalTitle": "Course sign-up",
+    "modalCourseLabel": "Course",
+    "modalAmountLabel": "Amount due",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phone": "Phone",
+    "email": "Email",
+    "submit": "Proceed to payment",
+    "submitting": "Redirecting to PayU...",
+    "error": "Something went wrong. Please try again or call us.",
+    "infoNote": "You'll be redirected to the secure PayU payment page. There you can choose a one-time payment or PayU instalments.",
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email address",
+      "phone": "Please enter a valid phone number"
+    }
+  },
+  "paymentThankYou": {
+    "title": "Thank you!",
+    "desc": "Your request has been received. We'll send a payment status confirmation to your email.",
+    "backHome": "Back to homepage"
   }
 }

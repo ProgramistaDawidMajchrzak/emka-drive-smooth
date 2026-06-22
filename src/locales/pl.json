@@ -79,30 +79,45 @@
     "cta": "Wybieram",
     "main": [
       {
+        "id": "elearning",
         "name": "Kurs e‑learningowy",
         "price": "4 000 zł",
+        "amount": 4000,
+        "payOnline": true,
         "features": ["30h teorii online (e‑learning)", "30h jazd praktycznych", "Platforma e‑learningowa 24/7", "Materiały i testy online", "Egzamin wewnętrzny"]
       },
       {
+        "id": "stacjonarny",
         "name": "Kurs stacjonarny",
         "price": "4 500 zł",
+        "amount": 4500,
+        "payOnline": true,
         "features": ["30h teorii w sali", "30h jazd praktycznych", "Dostęp do platformy e‑learningowej", "Materiały i testy online", "Egzamin wewnętrzny"]
       },
       {
+        "id": "ekspresowy",
         "name": "Kurs ekspresowy",
         "price": "4 900 zł",
+        "amount": 4900,
+        "payOnline": true,
         "features": ["Intensywny tryb nauki", "Krótszy termin realizacji", "Dostęp do platformy e‑learningowej", "Indywidualny plan jazd", "Priorytetowe godziny"]
       }
     ],
     "extra": [
       {
+        "id": "doszkalajace",
         "name": "Jazdy doszkalające",
-        "price": "150 zł / h",
+        "price": "180 zł / h",
+        "amount": 180,
+        "payOnline": false,
         "features": ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy"]
       },
       {
+        "id": "automat",
         "name": "Kurs – skrzynia automatyczna",
         "price": "4 800 zł",
+        "amount": 4800,
+        "payOnline": true,
         "features": ["Pełny kurs kat. B", "Auto z automatyczną skrzynią biegów", "Podstawiamy auto z automatem", "Dostęp do platformy e‑learningowej", "Egzamin wewnętrzny"]
       }
     ],
@@ -204,5 +219,29 @@
     "title": "Standardy ochrony małoletnich",
     "subtitle": "eMKA wdrożyła standardy zgodnie z ustawą Kamilkową (ustawa z 28.07.2023 r.)",
     "cta": "Czytaj więcej"
+  },
+  "payment": {
+    "ctaButton": "Zapisz się i zapłać",
+    "modalTitle": "Zapis na kurs",
+    "modalCourseLabel": "Kurs",
+    "modalAmountLabel": "Do zapłaty",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "phone": "Telefon",
+    "email": "Email",
+    "submit": "Przejdź do płatności",
+    "submitting": "Przekierowanie do PayU...",
+    "error": "Coś poszło nie tak. Spróbuj ponownie lub zadzwoń do nas.",
+    "infoNote": "Po kliknięciu zostaniesz przekierowany na bezpieczną stronę płatności PayU. Tam możesz wybrać płatność jednorazową lub raty PayU.",
+    "validation": {
+      "required": "To pole jest wymagane",
+      "email": "Podaj poprawny adres email",
+      "phone": "Podaj poprawny numer telefonu"
+    }
+  },
+  "paymentThankYou": {
+    "title": "Dziękujemy!",
+    "desc": "Twoje zgłoszenie zostało przyjęte. Potwierdzenie statusu płatności wyślemy na podany adres email.",
+    "backHome": "Wróć na stronę główną"
   }
 }
