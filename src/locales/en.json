@@ -109,7 +109,8 @@
         "name": "Refresher lessons",
         "price": "180 PLN / h",
         "amount": 180,
-        "payOnline": false,
+        "payOnline": true,
+        "perHour": true,
         "features": ["Exam car", "Manoeuvring area", "Exam routes", "For licensed drivers"]
       },
       {
@@ -225,6 +226,7 @@
     "modalTitle": "Course sign-up",
     "modalCourseLabel": "Course",
     "modalAmountLabel": "Amount due",
+    "hours": "Number of hours",
     "firstName": "First name",
     "lastName": "Last name",
     "phone": "Phone",

@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { getPayuAccessToken } from "../lib/payu-auth.js";
-import { PAYU_COURSES } from "../lib/payu-courses.js";
+import { PAYU_COURSES, MAX_HOURS } from "../lib/payu-courses.js";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[+0-9 ]{7,15}$/;
@@ -14,11 +14,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { courseId, firstName, lastName, phone, email, language } = req.body ?? {};
+  const { courseId, hours, firstName, lastName, phone, email, language } = req.body ?? {};
 
   const course = typeof courseId === "string" ? PAYU_COURSES[courseId] : undefined;
   if (!course) {
     return res.status(400).json({ error: "Unknown course" });
+  }
+  let quantity = 1;
+  if (course.perHour) {
+    quantity = Number(hours);
+    if (!Number.isInteger(quantity) || quantity < 1 || quantity > MAX_HOURS) {
+      return res.status(400).json({ error: "Invalid hours" });
+    }
   }
   if (typeof firstName !== "string" || !firstName.trim() || typeof lastName !== "string" || !lastName.trim()) {
     return res.status(400).json({ error: "Missing buyer name" });
@@ -37,14 +44,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const origin = `${proto}://${req.headers.host}`;
     const customerIp =
       (req.headers["x-forwarded-for"] as string)?.split(",")[0]?.trim() || req.socket.remoteAddress || "127.0.0.1";
-    const amountGrosze = String(course.amount * 100);
+    const unitGrosze = course.amount * 100;
+    const totalGrosze = String(unitGrosze * quantity);
+    const description = course.perHour ? `${course.name} (${quantity}h)` : course.name;
 
     const orderPayload = {
       customerIp,
       merchantPosId: process.env.PAYU_POS_ID,
-      description: course.name,
+      description,
       currencyCode: "PLN",
-      totalAmount: amountGrosze,
+      totalAmount: totalGrosze,
       buyer: {
         email: email.trim(),
         phone: phone.trim(),
@@ -52,7 +61,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         lastName: lastName.trim(),
         language: buyerLanguage(language),
       },
-      products: [{ name: course.name, unitPrice: amountGrosze, quantity: "1" }],
+      products: [{ name: course.name, unitPrice: String(unitGrosze), quantity: String(quantity) }],
       continueUrl: `${origin}/platnosc/dziekujemy`,
       notifyUrl: process.env.VERCEL_AUTOMATION_BYPASS_SECRET
         ? `${origin}/api/payu-webhook?x-vercel-protection-bypass=${process.env.VERCEL_AUTOMATION_BYPASS_SECRET}`

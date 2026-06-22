@@ -64,7 +64,7 @@ const Index = () => {
 
   const reasons = (t("reasons.items", { returnObjects: true }) as { title: string; desc: string }[]);
   const mainCourses = (t("courses.main", { returnObjects: true }) as { id: string; name: string; price: string; amount: number; payOnline: boolean; features: string[] }[]);
-  const extraCourses = (t("courses.extra", { returnObjects: true }) as { id: string; name: string; price: string; amount: number; payOnline: boolean; features: string[] }[]);
+  const extraCourses = (t("courses.extra", { returnObjects: true }) as { id: string; name: string; price: string; amount: number; payOnline: boolean; perHour?: boolean; features: string[] }[]);
   const promos = (t("promos.items", { returnObjects: true }) as { badge: string; title: string; desc: string; cta: string }[]);
   const reviews = (t("reviews.items", { returnObjects: true }) as { name: string; text: string }[]);
   const faqs = (t("faq.items", { returnObjects: true }) as { q: string; a: string }[]);
@@ -401,7 +401,7 @@ const Index = () => {
                   {c.payOnline ? (
                     <Button
                       className="w-full bg-primary text-primary-foreground hover:bg-primary-deep transition-smooth"
-                      onClick={() => setPayingCourse({ id: c.id, name: c.name, price: c.price, amount: c.amount })}
+                      onClick={() => setPayingCourse({ id: c.id, name: c.name, price: c.price, amount: c.amount, perHour: c.perHour })}
                     >
                       {t("payment.ctaButton")}
                     </Button>

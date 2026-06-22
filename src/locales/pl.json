@@ -109,7 +109,8 @@
         "name": "Jazdy doszkalające",
         "price": "180 zł / h",
         "amount": 180,
-        "payOnline": false,
+        "payOnline": true,
+        "perHour": true,
         "features": ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy"]
       },
       {
@@ -225,6 +226,7 @@
     "modalTitle": "Zapis na kurs",
     "modalCourseLabel": "Kurs",
     "modalAmountLabel": "Do zapłaty",
+    "hours": "Liczba godzin",
     "firstName": "Imię",
     "lastName": "Nazwisko",
     "phone": "Telefon",

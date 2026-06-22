@@ -11,7 +11,10 @@ export interface PayableCourse {
   name: string;
   price: string;
   amount: number;
+  perHour?: boolean;
 }
+
+const MAX_HOURS = 20;
 
 interface PaymentModalProps {
   course: PayableCourse | null;
@@ -23,6 +26,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const PaymentModal = ({ course, onClose }: PaymentModalProps) => {
   const { t, i18n } = useTranslation();
+  const [hours, setHours] = useState(1);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -32,6 +36,7 @@ const PaymentModal = ({ course, onClose }: PaymentModalProps) => {
   const [serverError, setServerError] = useState("");
 
   const reset = () => {
+    setHours(1);
     setFirstName("");
     setLastName("");
     setPhone("");
@@ -71,6 +76,7 @@ const PaymentModal = ({ course, onClose }: PaymentModalProps) => {
           courseId: course.id,
           courseName: course.name,
           amount: course.amount,
+          hours: course.perHour ? hours : undefined,
           firstName: firstName.trim(),
           lastName: lastName.trim(),
           phone: phone.trim(),
@@ -102,12 +108,28 @@ const PaymentModal = ({ course, onClose }: PaymentModalProps) => {
             </div>
             <div className="text-right">
               <div className="text-xs uppercase tracking-wide text-muted-foreground">{t("payment.modalAmountLabel")}</div>
-              <div className="font-display text-lg font-bold text-gradient-gold">{course.price}</div>
+              <div className="font-display text-lg font-bold text-gradient-gold">
+                {course.perHour ? `${course.amount * hours} ${course.price.split(" ")[1] ?? ""}` : course.price}
+              </div>
             </div>
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          {course?.perHour && (
+            <div className="space-y-1.5">
+              <Label htmlFor="pm-hours">{t("payment.hours")}</Label>
+              <Input
+                id="pm-hours"
+                type="number"
+                min={1}
+                max={MAX_HOURS}
+                value={hours}
+                onChange={(e) => setHours(Math.min(MAX_HOURS, Math.max(1, Number(e.target.value) || 1)))}
+                disabled={submitting}
+              />
+            </div>
+          )}
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1.5">
               <Label htmlFor="pm-firstName">{t("payment.firstName")}</Label>
