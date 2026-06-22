@@ -107,8 +107,8 @@
       {
         "id": "doszkalajace",
         "name": "Refresher lessons",
-        "price": "150 PLN / h",
-        "amount": 150,
+        "price": "180 PLN / h",
+        "amount": 180,
         "payOnline": false,
         "features": ["Exam car", "Manoeuvring area", "Exam routes", "For licensed drivers"]
       },

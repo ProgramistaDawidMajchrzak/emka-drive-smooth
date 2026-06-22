@@ -8,5 +8,4 @@ export const PAYU_COURSES: Record<string, PayuCourse> = {
   stacjonarny: { name: "Kurs stacjonarny", amount: 4500 },
   ekspresowy: { name: "Kurs ekspresowy", amount: 4900 },
   automat: { name: "Kurs - skrzynia automatyczna", amount: 4800 },
-  test: { name: "Test sandbox", amount: 10 },
 };

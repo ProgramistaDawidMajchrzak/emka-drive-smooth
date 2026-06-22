@@ -107,8 +107,8 @@
       {
         "id": "doszkalajace",
         "name": "Jazdy doszkalające",
-        "price": "150 zł / h",
-        "amount": 150,
+        "price": "180 zł / h",
+        "amount": 180,
         "payOnline": false,
         "features": ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy"]
       },
