@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -671,9 +672,14 @@ const Index = () => {
             </div>
             <div className="text-center md:text-right">
               <div className="text-sm opacity-70 mb-2">© {new Date().getFullYear()} {t("footer.rights")}</div>
-              <button onClick={() => setShowSOM(true)} className="text-xs text-gold/70 hover:text-gold underline transition-smooth cursor-pointer">
-                {t("footer.som")}
-              </button>
+              <div className="flex items-center justify-center md:justify-end gap-3">
+                <button onClick={() => setShowSOM(true)} className="text-xs text-gold/70 hover:text-gold underline transition-smooth cursor-pointer">
+                  {t("footer.som")}
+                </button>
+                <Link to="/regulamin" className="text-xs text-gold/70 hover:text-gold underline transition-smooth">
+                  Regulamin
+                </Link>
+              </div>
             </div>
           </div>
         </div>
