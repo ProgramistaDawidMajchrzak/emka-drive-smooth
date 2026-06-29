@@ -19,7 +19,7 @@ const WhatsAppIcon = () => (
 const reasonIcons = [Car, Heart, Sparkles, Target, Award, Users];
 const mainCourseIcons = [GraduationCap, Users, Zap];
 const extraCourseIcons = [Car, Award];
-const promoIcons = [Sparkles, Gift, Clock];
+const promoIcons = [Gift, Clock];
 
 const locations = [
   {
@@ -419,6 +419,9 @@ const Index = () => {
             <div className="font-display text-2xl font-bold text-primary mb-3">{t("courses.raty.title")}</div>
             <p className="text-foreground/80 leading-relaxed">
               {t("courses.raty.desc", { amount: t("courses.raty.amount"), hours: t("courses.raty.hours") })}
+            </p>
+            <p className="text-foreground/80 leading-relaxed mt-4 pt-4 border-t border-gold/20">
+              {t("courses.raty.payuDesc")}
             </p>
           </Card>
         </div>

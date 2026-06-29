@@ -123,10 +123,11 @@
       }
     ],
     "raty": {
-      "title": "0% instalments – no financial stress",
+      "title": "Our own instalments and PayU instalments – no financial stress",
       "desc": "First payment is only {{amount}} upon enrolment. Each subsequent instalment is agreed individually — after completing every {{hours}} of driving. No hidden costs, no rush.",
       "amount": "1 000 PLN",
-      "hours": "10 hours"
+      "hours": "10 hours",
+      "payuDesc": "Paying online? You can also use PayU instalments – up to 50 instalments. Choose the number and terms conveniently at checkout."
     }
   },
   "fleet": {
@@ -141,12 +142,6 @@
     "title": "Current special offers",
     "subtitle": "Take advantage – limited places available.",
     "items": [
-      {
-        "badge": "Until end of June",
-        "title": "Express course at standard price",
-        "desc": "Sign up by end of June and take the express course paying the standard course price. Call to confirm your spot – limited availability.",
-        "cta": "Call and take advantage"
-      },
       {
         "badge": "All year",
         "title": "Referral system – discount for you and a friend",

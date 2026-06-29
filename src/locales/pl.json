@@ -123,10 +123,11 @@
       }
     ],
     "raty": {
-      "title": "Raty 0% – bez stresu finansowego",
+      "title": "Raty własne i raty PayU – bez stresu finansowego",
       "desc": "Pierwsza wpłata to tylko {{amount}} przy zapisie. Każda kolejna rata ustalana jest indywidualnie — po ukończeniu każdych {{hours}} jazdy. Żadnych ukrytych kosztów, żadnego pośpiechu.",
       "amount": "1 000 zł",
-      "hours": "10 godzin"
+      "hours": "10 godzin",
+      "payuDesc": "Płacisz online? Skorzystaj też z rat PayU – nawet do 50 rat. Liczbę rat i warunki wybierasz wygodnie na etapie płatności."
     }
   },
   "fleet": {
@@ -141,12 +142,6 @@
     "title": "Aktualne oferty specjalne",
     "subtitle": "Skorzystaj z okazji – ilość miejsc ograniczona.",
     "items": [
-      {
-        "badge": "Do końca czerwca",
-        "title": "Kurs ekspresowy w cenie normalnego",
-        "desc": "Zapisz się do końca czerwca i jedź na kursie ekspresowym, płacąc tyle co za kurs stacjonarny. Zadzwoń i potwierdź termin – ilość miejsc ograniczona.",
-        "cta": "Zadzwoń i skorzystaj"
-      },
       {
         "badge": "Cały rok",
         "title": "System poleceń – rabat dla Ciebie i kolegi",
