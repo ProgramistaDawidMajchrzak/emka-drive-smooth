@@ -18,7 +18,8 @@ const WhatsAppIcon = () => (
 
 const reasonIcons = [Car, Heart, Sparkles, Target, Award, Users];
 const mainCourseIcons = [GraduationCap, Users, Zap];
-const extraCourseIcons = [Car, Award];
+const extraCourseIcons = [Car];
+const doszkalajaceIcons = [Clock, Car, Award];
 const promoIcons = [Gift, Clock];
 
 const locations = [
@@ -55,6 +56,7 @@ const Index = () => {
     { href: "#o-nas", label: t("nav.oNas") },
     { href: "#instruktorzy", label: t("nav.instruktorzy") },
     { href: "#kursy", label: t("nav.kursy") },
+    { href: "#doszkalajace", label: t("nav.doszkalajace") },
     { href: "#flota", label: t("nav.flota") },
     { href: "#promocje", label: t("nav.promocje") },
     { href: "#opinie", label: t("nav.opinie") },
@@ -66,6 +68,8 @@ const Index = () => {
   const reasons = (t("reasons.items", { returnObjects: true }) as { title: string; desc: string }[]);
   const mainCourses = (t("courses.main", { returnObjects: true }) as { id: string; name: string; price: string; amount: number; payOnline: boolean; features: string[] }[]);
   const extraCourses = (t("courses.extra", { returnObjects: true }) as { id: string; name: string; price: string; amount: number; payOnline: boolean; perHour?: boolean; features: string[] }[]);
+  const doszkalajaceOptions = (t("doszkalajace.options", { returnObjects: true }) as { id: string; title: string; price: string; amount: number; perHour?: boolean; savings?: string }[]);
+  const doszkalajaceFeatures = (t("doszkalajace.features", { returnObjects: true }) as string[]);
   const promos = (t("promos.items", { returnObjects: true }) as { badge: string; title: string; desc: string; cta: string }[]);
   const reviews = (t("reviews.items", { returnObjects: true }) as { name: string; text: string }[]);
   const faqs = (t("faq.items", { returnObjects: true }) as { q: string; a: string }[]);
@@ -381,11 +385,11 @@ const Index = () => {
               );
             })}
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+          <div className="flex justify-center mb-12">
             {extraCourses.map((c, i) => {
               const Icon = extraCourseIcons[i];
               return (
-                <Card key={i} className="p-8 border-border bg-card transition-smooth hover:-translate-y-2 hover:shadow-elegant hover:border-gold/50">
+                <Card key={i} className="p-8 border-border bg-card transition-smooth hover:-translate-y-2 hover:shadow-elegant hover:border-gold/50 w-full max-w-sm">
                   <div className="w-12 h-12 rounded-xl bg-gold-gradient flex items-center justify-center mb-4 shadow-gold-soft">
                     <Icon className="w-6 h-6 text-gold-foreground" />
                   </div>
@@ -424,6 +428,57 @@ const Index = () => {
               {t("courses.raty.payuDesc")}
             </p>
           </Card>
+        </div>
+      </section>
+
+      {/* JAZDY DOSZKALAJĄCE */}
+      <section id="doszkalajace" className="py-24 md:py-32 bg-background">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-sm tracking-[0.3em] uppercase text-gold font-semibold mb-4">{t("doszkalajace.sectionLabel")}</div>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">{t("doszkalajace.title")}</h2>
+            <p className="text-muted-foreground text-lg">{t("doszkalajace.subtitle")}</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-6">
+            {doszkalajaceOptions.map((opt, i) => {
+              const Icon = doszkalajaceIcons[i];
+              const isBestValue = i === 2;
+              return (
+                <Card key={i} className={`p-8 transition-smooth hover:-translate-y-2 hover:shadow-elegant relative ${isBestValue ? "border-gold border-2 bg-gradient-to-b from-gold/5 to-transparent" : "border-border bg-card hover:border-gold/50"}`}>
+                  {opt.savings && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-gradient text-gold-foreground text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full shadow-gold-soft whitespace-nowrap">
+                      {opt.savings}
+                    </div>
+                  )}
+                  <div className="w-12 h-12 rounded-xl bg-gold-gradient flex items-center justify-center mb-4 shadow-gold-soft">
+                    <Icon className="w-6 h-6 text-gold-foreground" />
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-primary mb-2">{opt.title}</h3>
+                  <div className="text-3xl font-display font-bold text-gradient-gold mb-6">{opt.price}</div>
+                  <ul className="space-y-3 mb-8">
+                    {doszkalajaceFeatures.map((f, j) => (
+                      <li key={j} className="flex items-start gap-3 text-foreground/80">
+                        <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    className={`w-full ${isBestValue ? "bg-gold-gradient text-gold-foreground hover:opacity-90" : "bg-primary text-primary-foreground hover:bg-primary-deep"} transition-smooth`}
+                    onClick={() => setPayingCourse({ id: opt.id, name: opt.title, price: opt.price, amount: opt.amount, perHour: opt.perHour })}
+                  >
+                    {t("payment.ctaButton")}
+                  </Button>
+                </Card>
+              );
+            })}
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-2 rounded-xl border border-gold/30 bg-gold/5 px-6 py-4 text-sm text-foreground/80">
+              <Check className="w-4 h-4 text-gold flex-shrink-0" />
+              <span>{t("doszkalajace.pakietNote")}</span>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -10,6 +10,7 @@
     "promocje": "Promocje",
     "opinie": "Opinie",
     "faq": "FAQ",
+    "doszkalajace": "Jazdy doszkalające",
     "znajdzNas": "Znajdź nas",
     "kontakt": "Kontakt",
     "zapiszSie": "Zapisz się",
@@ -105,15 +106,6 @@
     ],
     "extra": [
       {
-        "id": "doszkalajace",
-        "name": "Jazdy doszkalające",
-        "price": "180 zł / h",
-        "amount": 180,
-        "payOnline": true,
-        "perHour": true,
-        "features": ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy"]
-      },
-      {
         "id": "automat",
         "name": "Kurs – skrzynia automatyczna",
         "price": "4 800 zł",
@@ -129,6 +121,18 @@
       "hours": "10 godzin",
       "payuDesc": "Płacisz online? Skorzystaj też z rat PayU – nawet do 50 rat. Liczbę rat i warunki wybierasz wygodnie na etapie płatności."
     }
+  },
+  "doszkalajace": {
+    "sectionLabel": "Jazdy doszkalające",
+    "title": "Jazdy doszkalające",
+    "subtitle": "Doskonalenie techniki jazdy na aucie egzaminacyjnym – z doświadczonym instruktorem.",
+    "pakietNote": "Przy zakupie pakietów płatność należy uiścić w całości.",
+    "features": ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy"],
+    "options": [
+      { "id": "doszkalajace", "title": "Pojedyncza godzina", "price": "180 zł / h", "amount": 180, "perHour": true },
+      { "id": "doszkalajace_4h", "title": "Pakiet 4 godzin", "price": "700 zł", "amount": 700, "savings": "Oszczędzasz 20 zł" },
+      { "id": "doszkalajace_10h", "title": "Pakiet 10 godzin", "price": "1 500 zł", "amount": 1500, "savings": "Oszczędzasz 300 zł" }
+    ]
   },
   "fleet": {
     "sectionLabel": "Flota",
