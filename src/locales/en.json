@@ -98,8 +98,8 @@
       {
         "id": "ekspresowy",
         "name": "Express course",
-        "price": "4 900 PLN",
-        "amount": 4900,
+        "price": "5 200 PLN",
+        "amount": 5200,
         "payOnline": true,
         "features": ["Intensive learning mode", "Shorter completion time", "Access to e‑learning platform", "Individual driving plan", "Priority hours"]
       }

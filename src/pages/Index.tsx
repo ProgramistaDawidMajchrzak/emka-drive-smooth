@@ -9,6 +9,7 @@ import PaymentModal, { type PayableCourse } from "@/components/PaymentModal";
 import { Car, Users, Heart, Target, Award, Phone, Mail, MapPin, Instagram, Facebook, Music2, Menu, X, Check, Star, Sparkles, Gift, GraduationCap, Zap, Shield, Clock, FileText } from "lucide-react";
 import logo from "@/assets/emka-logo.png";
 import cars from "@/assets/emka-cars.jpg";
+import cars2 from "@/assets/emka-cars-2.jpg";
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" aria-hidden="true">
@@ -502,7 +503,20 @@ const Index = () => {
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
-            <img src={cars} alt="Auta eMKA – wizualizacje brandingowe" className="relative rounded-3xl shadow-elegant w-full" loading="lazy" />
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <img
+                src={cars}
+                alt="Auta eMKA – flota do nauki jazdy"
+                className="rounded-3xl shadow-elegant w-full h-full object-cover sm:col-span-2"
+                loading="lazy"
+              />
+              <img
+                src={cars2}
+                alt="Auta eMKA – Kia Rio z tablicami L"
+                className="rounded-3xl shadow-elegant w-full h-full object-cover sm:col-span-2"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>

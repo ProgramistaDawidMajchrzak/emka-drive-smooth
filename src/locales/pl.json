@@ -98,8 +98,8 @@
       {
         "id": "ekspresowy",
         "name": "Kurs ekspresowy",
-        "price": "4 900 zł",
-        "amount": 4900,
+        "price": "5 200 zł",
+        "amount": 5200,
         "payOnline": true,
         "features": ["Intensywny tryb nauki", "Krótszy termin realizacji", "Dostęp do platformy e‑learningowej", "Indywidualny plan jazd", "Priorytetowe godziny"]
       }
