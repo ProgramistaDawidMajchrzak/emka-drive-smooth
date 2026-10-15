@@ -1,6 +1,6 @@
 {
-  "promoBanner": "Zapisz się już teraz!",
-  "promoBannerCta": "Zadzwoń i dowiedz się więcej →",
+  "promoBanner": "Promocja jesienna: przyjdź ze znajomym – każdy zaoszczędzi 200 zł!",
+  "promoBannerCta": "Szczegóły →",
   "nav": {
     "dlaczego": "Dlaczego my",
     "oNas": "O nas",
@@ -80,28 +80,38 @@
     "cta": "Wybieram",
     "main": [
       {
-        "id": "elearning",
-        "name": "Kurs e‑learningowy",
+        "id": "praktyczny",
+        "name": "Kurs praktyczny",
         "price": "4 000 zł",
         "amount": 4000,
         "payOnline": true,
-        "features": ["30h teorii online (e‑learning)", "30h jazd praktycznych", "Platforma e‑learningowa 24/7", "Materiały i testy online", "Egzamin wewnętrzny"]
+        "features": ["Po zdanej teorii w WORD", "30h jazd praktycznych", "Jazdy w ciągu maks. 6–8 tygodni", "Egzamin wewnętrzny"]
       },
       {
-        "id": "stacjonarny",
-        "name": "Kurs stacjonarny",
-        "price": "4 500 zł",
-        "amount": 4500,
+        "id": "standardowy",
+        "name": "Kurs standardowy",
+        "price": "4 200 zł",
+        "amount": 4200,
         "payOnline": true,
-        "features": ["30h teorii w sali", "30h jazd praktycznych", "Dostęp do platformy e‑learningowej", "Materiały i testy online", "Egzamin wewnętrzny"]
+        "featured": true,
+        "promoNote": "Patrz promocje – razem taniej o 200 zł",
+        "features": ["30h teorii online (e‑learning)", "30h jazd praktycznych", "Jazdy w ciągu maks. 6–8 tygodni", "Platforma e‑learningowa 24/7", "Materiały i testy online", "Egzamin wewnętrzny"]
       },
       {
-        "id": "ekspresowy",
-        "name": "Kurs ekspresowy",
+        "id": "weekendowy",
+        "name": "Kurs weekendowy",
+        "price": "5 500 zł",
+        "amount": 5500,
+        "payOnline": true,
+        "features": ["30h teorii online (e‑learning)", "30h jazd praktycznych", "Jazdy w 5–6 weekendów", "Platforma e‑learningowa 24/7", "Materiały i testy online", "Egzamin wewnętrzny"]
+      },
+      {
+        "id": "przyspieszony",
+        "name": "Kurs przyspieszony",
         "price": "5 200 zł",
         "amount": 5200,
         "payOnline": true,
-        "features": ["Intensywny tryb nauki", "Krótszy termin realizacji", "Dostęp do platformy e‑learningowej", "Indywidualny plan jazd", "Priorytetowe godziny"]
+        "features": ["30h teorii online (e‑learning)", "30h jazd praktycznych", "Jazdy w terminie maks. 3 tygodni", "Platforma e‑learningowa 24/7", "Materiały i testy online", "Egzamin wewnętrzny"]
       }
     ],
     "extra": [
@@ -147,16 +157,10 @@
     "subtitle": "Skorzystaj z okazji – ilość miejsc ograniczona.",
     "items": [
       {
-        "badge": "Cały rok",
-        "title": "System poleceń – rabat dla Ciebie i kolegi",
-        "desc": "Przyprowadź znajomego do eMKA – oboje dostaniecie rabat na kurs. Zadzwoń, żeby dowiedzieć się więcej o warunkach i wysokości rabatu.",
-        "cta": "Dowiedz się więcej"
-      },
-      {
-        "badge": "Do końca czerwca",
-        "title": "Kurs e‑learningowy + 2 godziny doszkalające gratis",
-        "desc": "Zapisz się na kurs e‑learningowy do końca czerwca i otrzymaj 2 dodatkowe godziny jazdy doszkalającej przed egzaminem całkowicie za darmo. Łącznie 32 godziny na drodze!",
-        "cta": "Skorzystaj z oferty"
+        "badge": "Promocja jesienna",
+        "title": "Przyjdź ze znajomym – każdy zaoszczędzi 200 zł",
+        "desc": "Zapiszcie się razem na Kurs standardowy i podpiszcie umowę we dwoje – każde z Was zapłaci o 200 zł mniej. Zamiast 4 200 zł tylko 4 000 zł za osobę. Promocja dotyczy wyłącznie Kursu standardowego.",
+        "cta": "Zadzwoń i zapiszcie się razem"
       }
     ]
   },
@@ -173,7 +177,7 @@
     "sectionLabel": "FAQ",
     "title": "Najczęstsze pytania",
     "items": [
-      { "q": "Ile trwa cały kurs prawa jazdy kat. B?", "a": "Standardowo 6–10 tygodni, w zależności od dostępności kursanta. Mamy też tryb ekspresowy – skróć czas do minimum." },
+      { "q": "Ile trwa cały kurs prawa jazdy kat. B?", "a": "W kursie standardowym jazdy realizujemy w maks. 6–8 tygodni. Chcesz szybciej? Wybierz kurs przyspieszony – jazdy w maks. 3 tygodnie. Pracujesz w tygodniu? Kurs weekendowy to jazdy w 5–6 weekendów." },
       { "q": "Czy mogę jeździć tym samym autem na egzaminie?", "a": "Tak! Nasza flota to auta identyczne z egzaminacyjnymi WORD Poznań – uczysz się tam, gdzie zdajesz." },
       { "q": "Jak wygląda płatność za kurs?", "a": "Oferujemy raty 0% – pierwsza wpłata to 1 000 zł przy zapisie. Każda kolejna rata ustalana jest indywidualnie po ukończeniu każdych 10 godzin jazdy." },
       { "q": "Od jakiego wieku mogę zacząć kurs?", "a": "Kurs możesz rozpocząć 3 miesiące przed 18. urodzinami. Osoby w wieku 16 lat i 9 miesięcy mogą zacząć naukę za zgodą rodzica lub opiekuna prawnego." },
@@ -196,9 +200,10 @@
     "rights": "eMKA Poznań. Wszelkie prawa zastrzeżone.",
     "som": "Standardy ochrony małoletnich"
   },
-  "teenModal": {
-    "title": "Masz 16 lat i 9 miesięcy?",
-    "desc": "Nie musisz czekać do 18. urodzin! Możesz rozpocząć naukę jazdy już w wieku 16 lat i 9 miesięcy — wystarczy zgoda rodzica lub opiekuna prawnego.\n\nZadzwoń do nas i umów się na start kursu jeszcze przed swoimi 18. urodzinami.",
+  "promoModal": {
+    "title": "Promocja jesienna – razem taniej!",
+    "alt": "Promocja jesienna eMKA: przyjdź ze znajomym, każdy zaoszczędzi 200 zł, gdy podpiszecie umowę razem",
+    "ctaDetails": "Zobacz szczegóły",
     "ctaCall": "Zadzwoń teraz",
     "ctaClose": "Zamknij"
   },

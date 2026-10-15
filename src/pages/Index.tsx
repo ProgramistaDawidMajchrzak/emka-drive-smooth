@@ -6,10 +6,11 @@ import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import PaymentModal, { type PayableCourse } from "@/components/PaymentModal";
-import { Car, Users, Heart, Target, Award, Phone, Mail, MapPin, Instagram, Facebook, Music2, Menu, X, Check, Star, Sparkles, Gift, GraduationCap, Zap, Shield, Clock, FileText } from "lucide-react";
+import { Car, Users, Heart, Target, Award, Phone, Mail, MapPin, Instagram, Facebook, Music2, Menu, X, Check, Star, Sparkles, Gift, GraduationCap, Zap, Shield, Clock, FileText, CalendarDays } from "lucide-react";
 import logo from "@/assets/emka-logo.png";
 import cars from "@/assets/emka-cars.jpg";
 import cars2 from "@/assets/emka-cars-2.jpg";
+import promoPoster from "@/assets/promo-jesien.jpg";
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" aria-hidden="true">
@@ -18,10 +19,10 @@ const WhatsAppIcon = () => (
 );
 
 const reasonIcons = [Car, Heart, Sparkles, Target, Award, Users];
-const mainCourseIcons = [GraduationCap, Users, Zap];
+const mainCourseIcons = [Car, GraduationCap, CalendarDays, Zap];
 const extraCourseIcons = [Car];
 const doszkalajaceIcons = [Clock, Car, Award];
-const promoIcons = [Gift, Clock];
+const promoIcons = [Gift];
 
 const locations = [
   {
@@ -48,7 +49,7 @@ const Index = () => {
   const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [showTeenModal, setShowTeenModal] = useState(false);
+  const [showPromoModal, setShowPromoModal] = useState(false);
   const [showSOM, setShowSOM] = useState(false);
   const [payingCourse, setPayingCourse] = useState<PayableCourse | null>(null);
 
@@ -67,7 +68,7 @@ const Index = () => {
   ];
 
   const reasons = (t("reasons.items", { returnObjects: true }) as { title: string; desc: string }[]);
-  const mainCourses = (t("courses.main", { returnObjects: true }) as { id: string; name: string; price: string; amount: number; payOnline: boolean; features: string[] }[]);
+  const mainCourses = (t("courses.main", { returnObjects: true }) as { id: string; name: string; price: string; amount: number; payOnline: boolean; featured?: boolean; promoNote?: string; features: string[] }[]);
   const extraCourses = (t("courses.extra", { returnObjects: true }) as { id: string; name: string; price: string; amount: number; payOnline: boolean; perHour?: boolean; features: string[] }[]);
   const doszkalajaceOptions = (t("doszkalajace.options", { returnObjects: true }) as { id: string; title: string; price: string; amount: number; perHour?: boolean; savings?: string }[]);
   const doszkalajaceFeatures = (t("doszkalajace.features", { returnObjects: true }) as string[]);
@@ -86,15 +87,15 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    if (!sessionStorage.getItem("teenPopupShown")) {
-      const t = setTimeout(() => setShowTeenModal(true), 1500);
+    if (!sessionStorage.getItem("promoPopupShown")) {
+      const t = setTimeout(() => setShowPromoModal(true), 1500);
       return () => clearTimeout(t);
     }
   }, []);
 
-  const closeTeenModal = () => {
-    setShowTeenModal(false);
-    sessionStorage.setItem("teenPopupShown", "true");
+  const closePromoModal = () => {
+    setShowPromoModal(false);
+    sessionStorage.setItem("promoPopupShown", "true");
   };
 
   const changeLang = (code: string) => {
@@ -104,20 +105,22 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
 
-      {/* POPUP 17-LATKI */}
-      <Dialog open={showTeenModal} onOpenChange={(v) => { if (!v) closeTeenModal(); }}>
-        <DialogContent className="max-w-md">
-          <DialogHeader>
-            <DialogTitle className="font-display text-xl text-primary">{t("teenModal.title")}</DialogTitle>
-            <DialogDescription className="text-foreground/80 leading-relaxed pt-2 whitespace-pre-line">
-              {t("teenModal.desc")}
-            </DialogDescription>
+      {/* POPUP PROMOCJA JESIENNA */}
+      <Dialog open={showPromoModal} onOpenChange={(v) => { if (!v) closePromoModal(); }}>
+        <DialogContent className="max-w-sm p-4 gap-3">
+          <DialogHeader className="sr-only">
+            <DialogTitle>{t("promoModal.title")}</DialogTitle>
+            <DialogDescription>{t("promoModal.alt")}</DialogDescription>
           </DialogHeader>
-          <div className="flex gap-3 pt-2">
+          <img src={promoPoster} alt={t("promoModal.alt")} className="w-auto max-h-[70vh] mx-auto rounded-lg" />
+          <div className="flex flex-wrap justify-center gap-2">
             <Button className="bg-gold-gradient text-gold-foreground font-semibold" asChild>
-              <a href="tel:790775049">{t("teenModal.ctaCall")}</a>
+              <a href="#promocje" onClick={closePromoModal}>{t("promoModal.ctaDetails")}</a>
             </Button>
-            <Button variant="outline" onClick={closeTeenModal}>{t("teenModal.ctaClose")}</Button>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary-deep" asChild>
+              <a href="tel:790775049">{t("promoModal.ctaCall")}</a>
+            </Button>
+            <Button variant="outline" onClick={closePromoModal}>{t("promoModal.ctaClose")}</Button>
           </div>
         </DialogContent>
       </Dialog>
@@ -158,7 +161,7 @@ const Index = () => {
       {/* PROMO BANNER */}
       <div className="fixed top-0 inset-x-0 z-[60] bg-gold-gradient text-gold-foreground text-center py-2 px-4 text-sm font-semibold">
         {t("promoBanner")}{" "}
-        <a href="tel:790775049" className="underline font-bold ml-1">{t("promoBannerCta")}</a>
+        <a href="#promocje" className="underline font-bold ml-1">{t("promoBannerCta")}</a>
       </div>
 
       {/* NAV */}
@@ -346,10 +349,10 @@ const Index = () => {
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">{t("courses.title")}</h2>
             <p className="text-muted-foreground text-lg">{t("courses.subtitle")}</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mb-8">
             {mainCourses.map((c, i) => {
               const Icon = mainCourseIcons[i];
-              const featured = i === 0;
+              const featured = !!c.featured;
               return (
                 <Card key={i} className={`p-8 transition-smooth hover:-translate-y-2 hover:shadow-elegant relative ${featured ? "border-gold border-2 bg-gradient-to-b from-gold/5 to-transparent" : "border-border bg-card"}`}>
                   {featured && (
@@ -370,6 +373,12 @@ const Index = () => {
                       </li>
                     ))}
                   </ul>
+                  {c.promoNote && (
+                    <a href="#promocje" className="flex items-center gap-2 mb-6 rounded-lg border border-gold/40 bg-gold/10 px-4 py-3 text-sm font-semibold text-primary hover:border-gold hover:bg-gold/20 transition-smooth">
+                      <Gift className="w-4 h-4 text-gold flex-shrink-0" />
+                      <span>{c.promoNote} →</span>
+                    </a>
+                  )}
                   {c.payOnline ? (
                     <Button
                       className={`w-full ${featured ? "bg-gold-gradient text-gold-foreground hover:opacity-90" : "bg-primary text-primary-foreground hover:bg-primary-deep"} transition-smooth`}
@@ -529,7 +538,13 @@ const Index = () => {
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">{t("promos.title")}</h2>
             <p className="text-muted-foreground text-lg">{t("promos.subtitle")}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
+            <img
+              src={promoPoster}
+              alt={t("promoModal.alt")}
+              className="rounded-3xl shadow-elegant w-full max-w-sm mx-auto"
+              loading="lazy"
+            />
             {promos.map((p, i) => {
               const Icon = promoIcons[i];
               return (
