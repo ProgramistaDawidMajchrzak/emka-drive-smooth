@@ -6,7 +6,9 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[+0-9 ]{7,15}$/;
 
 function buyerLanguage(lang: unknown): string {
-  return lang === "en" ? "en" : "pl";
+  if (lang === "en") return "en";
+  if (lang === "ua") return "uk";
+  return "pl";
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -78,9 +80,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       body: JSON.stringify(orderPayload),
     });
 
-    const redirectUri = payuRes.headers.get("location");
+    const body = await payuRes.text();
+    let redirectUri = payuRes.headers.get("location");
     if (!redirectUri) {
-      const body = await payuRes.text();
+      try {
+        redirectUri = (JSON.parse(body) as { redirectUri?: string }).redirectUri ?? null;
+      } catch {
+        redirectUri = null;
+      }
+    }
+    if (!redirectUri) {
       throw new Error(`PayU order create failed: ${payuRes.status} ${body}`);
     }
 

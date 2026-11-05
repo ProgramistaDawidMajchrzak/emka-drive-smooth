@@ -21,7 +21,7 @@ const WhatsAppIcon = () => (
 const reasonIcons = [Car, Heart, Sparkles, Target, Award, Users];
 const mainCourseIcons = [Car, GraduationCap, CalendarDays, Zap];
 const extraCourseIcons = [Car];
-const doszkalajaceIcons = [Clock, Car, Award];
+const doszkalajaceIcons = [Clock, Car, Award, GraduationCap];
 const promoIcons = [Gift];
 
 const locations = [
@@ -449,7 +449,7 @@ const Index = () => {
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">{t("doszkalajace.title")}</h2>
             <p className="text-muted-foreground text-lg">{t("doszkalajace.subtitle")}</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-6">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-6xl mx-auto mb-6">
             {doszkalajaceOptions.map((opt, i) => {
               const Icon = doszkalajaceIcons[i];
               const isBestValue = i === 2;
@@ -483,7 +483,7 @@ const Index = () => {
               );
             })}
           </div>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-center gap-2 rounded-xl border border-gold/30 bg-gold/5 px-6 py-4 text-sm text-foreground/80">
               <Check className="w-4 h-4 text-gold flex-shrink-0" />
               <span>{t("doszkalajace.pakietNote")}</span>

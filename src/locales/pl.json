@@ -141,7 +141,8 @@
     "options": [
       { "id": "doszkalajace", "title": "Pojedyncza godzina", "price": "180 zł / h", "amount": 180, "perHour": true },
       { "id": "doszkalajace_4h", "title": "Pakiet 4 godzin", "price": "700 zł", "amount": 700, "savings": "Oszczędzasz 20 zł" },
-      { "id": "doszkalajace_10h", "title": "Pakiet 10 godzin", "price": "1 600 zł", "amount": 1600, "savings": "Oszczędzasz 200 zł" }
+      { "id": "doszkalajace_10h", "title": "Pakiet 10 godzin", "price": "1 600 zł", "amount": 1600, "savings": "Oszczędzasz 200 zł" },
+      { "id": "doszkalajace_kursant", "title": "Dla kursantów eMKA", "price": "150 zł / h", "amount": 150, "perHour": true, "savings": "Tylko dla naszych kursantów" }
     ]
   },
   "fleet": {
@@ -247,6 +248,8 @@
   },
   "paymentThankYou": {
     "title": "Dziękujemy!",
+    "errorTitle": "Płatność nie powiodła się",
+    "errorDesc": "Płatność została anulowana lub odrzucona. Spróbuj ponownie albo zadzwoń do nas: 790 775 049.",
     "desc": "Twoje zgłoszenie zostało przyjęte. Potwierdzenie statusu płatności wyślemy na podany adres email.",
     "backHome": "Wróć na stronę główną"
   }

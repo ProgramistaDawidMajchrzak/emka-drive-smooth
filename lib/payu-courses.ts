@@ -13,6 +13,7 @@ export const PAYU_COURSES: Record<string, PayuCourse> = {
   przyspieszony: { name: "Kurs przyspieszony", amount: 5200 },
   automat: { name: "Kurs - skrzynia automatyczna", amount: 4800 },
   doszkalajace: { name: "Jazdy doszkalające", amount: 180, perHour: true },
+  doszkalajace_kursant: { name: "Jazdy doszkalające – kursant eMKA", amount: 150, perHour: true },
   doszkalajace_4h: { name: "Jazdy doszkalające – pakiet 4 godzin", amount: 700 },
   doszkalajace_10h: { name: "Jazdy doszkalające – pakiet 10 godzin", amount: 1600 },
 };

@@ -137,11 +137,12 @@
     "title": "Refresher lessons",
     "subtitle": "Improve your driving technique in an exam-identical car – with an experienced instructor.",
     "pakietNote": "Package payments must be made in full at the time of booking.",
-    "features": ["Exam car", "Manoeuvring area", "Exam routes", "For licensed drivers – pre-exam lessons", "For our students – 150 zł / h"],
+    "features": ["Exam car", "Manoeuvring area", "Exam routes", "For licensed drivers – pre-exam lessons", "For our students – 150 PLN / h"],
     "options": [
       { "id": "doszkalajace", "title": "Single lesson", "price": "180 PLN / h", "amount": 180, "perHour": true },
       { "id": "doszkalajace_4h", "title": "4-lesson package", "price": "700 PLN", "amount": 700, "savings": "Save 20 PLN" },
-      { "id": "doszkalajace_10h", "title": "10-lesson package", "price": "1 600 PLN", "amount": 1600, "savings": "Save 200 PLN" }
+      { "id": "doszkalajace_10h", "title": "10-lesson package", "price": "1 600 PLN", "amount": 1600, "savings": "Save 200 PLN" },
+      { "id": "doszkalajace_kursant", "title": "For eMKA students", "price": "150 PLN / h", "amount": 150, "perHour": true, "savings": "Our students only" }
     ]
   },
   "fleet": {
@@ -247,6 +248,8 @@
   },
   "paymentThankYou": {
     "title": "Thank you!",
+    "errorTitle": "Payment failed",
+    "errorDesc": "The payment was cancelled or declined. Please try again or call us: 790 775 049.",
     "desc": "Your request has been received. We'll send a payment status confirmation to your email.",
     "backHome": "Back to homepage"
   }
