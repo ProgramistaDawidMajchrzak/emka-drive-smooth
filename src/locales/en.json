@@ -137,7 +137,7 @@
     "title": "Refresher lessons",
     "subtitle": "Improve your driving technique in an exam-identical car – with an experienced instructor.",
     "pakietNote": "Package payments must be made in full at the time of booking.",
-    "features": ["Exam car", "Manoeuvring area", "Exam routes", "For licensed drivers – pre-exam lessons"],
+    "features": ["Exam car", "Manoeuvring area", "Exam routes", "For licensed drivers – pre-exam lessons", "For our students – 150 zł / h"],
     "options": [
       { "id": "doszkalajace", "title": "Single lesson", "price": "180 PLN / h", "amount": 180, "perHour": true },
       { "id": "doszkalajace_4h", "title": "4-lesson package", "price": "700 PLN", "amount": 700, "savings": "Save 20 PLN" },

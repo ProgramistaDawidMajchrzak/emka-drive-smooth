@@ -137,7 +137,7 @@
     "title": "Jazdy doszkalające",
     "subtitle": "Doskonalenie techniki jazdy na aucie egzaminacyjnym – z doświadczonym instruktorem.",
     "pakietNote": "Przy zakupie pakietów płatność należy uiścić w całości.",
-    "features": ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy – jazdy przed egzaminem"],
+    "features": ["Auto egzaminacyjne", "Plac manewrowy", "Trasy egzaminacyjne", "Dla osób z prawem jazdy – jazdy przed egzaminem", "Dla naszych kursantów – 150 zł / h"],
     "options": [
       { "id": "doszkalajace", "title": "Pojedyncza godzina", "price": "180 zł / h", "amount": 180, "perHour": true },
       { "id": "doszkalajace_4h", "title": "Pakiet 4 godzin", "price": "700 zł", "amount": 700, "savings": "Oszczędzasz 20 zł" },
